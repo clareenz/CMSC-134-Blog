@@ -1,4 +1,6 @@
-import NamsTechPage from "./pages/NamsTechPage.jsx";
+import MainPage from "./pages/MainPage.jsx";
+import WriteUp_0 from "./pages/WriteUp_0.jsx"
 export { 
-    NamsTechPage
+    MainPage,
+    WriteUp_0,
 };
