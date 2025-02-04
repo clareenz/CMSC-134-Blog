@@ -14,14 +14,15 @@ const WriteUp_0 = () => {
   }, []);
 
   return (
+
     <div className="bg-white h-screen w-screen flex flex-col justify-center items-center text-black p-4">
-      <h1 className="text-xl font-bold mb-4">WriteUp_0</h1>
-      <pre className="text-gray-700 bg-gray-100 p-4 rounded w-3/4 mb-4">
-      <GoogleDocEmbed docId={"2PACX-1vTuMRcJlLCFNtNQC9vw6quRtP3u1XEABgZ_qEiHQxjM_QnBkfcRVtkpgW4sSBt_X1NTW5iMTnQdPu3D"} height="500px" />
-      </pre>
+      <h1 className="text-xl font-bold mb-4">Title</h1>
+      <div className="bg-white p-6 rounded-xl shadow-xl w-3/4 mb-4">
+        <pre className="text-gray-700"><GoogleDocEmbed docId={"2PACX-1vTuMRcJlLCFNtNQC9vw6quRtP3u1XEABgZ_qEiHQxjM_QnBkfcRVtkpgW4sSBt_X1NTW5iMTnQdPu3D"} height="500px" /></pre>
+      </div>
       <button
         onClick={() => navigate(-1)} // Navigate back
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="fixed bottom-4 left-4  overflow-hidden text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
       >
         Back
       </button>

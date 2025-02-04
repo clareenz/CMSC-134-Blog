@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
   const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState("mission");
+
   const teamMembers = [
     {
       name: "Zayne Peladas",
@@ -34,43 +36,56 @@ const MainPage = () => {
     },
   ];
 
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries.find((entry) => entry.isIntersecting);
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
       {/* Top Left Corner Menu */}
-      <div className="fixed top-0 left-0 bg-transparent p-10">
+      <div className="fixed top-0 left-0 bg-transparent py-10 px-5">
         <ul>
-          <li className="py-2 pr-16">
-            <a href="#mission">
-              <span className="text-black hover:text-white hover:rounded-r-xl hover:bg-black transition-all pr-20 py-2 pl-2">
-                Mission
-              </span>
-            </a>
-          </li>
-          <li className="py-2 pr-16">
-            <a href="#mission">
-              <span className="text-black hover:text-white hover:rounded-r-xl hover:bg-black transition-all pr-20 py-2 pl-2">
-                Vision
-              </span>
-            </a>
-          </li>
-          <li className="py-2 pr-16">
-            <a href="#mission">
-              <span className="text-black hover:text-white hover:rounded-r-xl hover:bg-black transition-all pr-20 py-2 pl-2">
-                Team
-              </span>
-            </a>
-          </li>
-          <li className="py-2 pr-16">
-            <a href="#mission">
-              <span className="text-black hover:text-white hover:rounded-r-xl hover:bg-black transition-all pr-20 py-2 pl-2">
-                Contact
-              </span>
-            </a>
-          </li>
+          {[
+            { id: "mission", label: "Mission" },
+            { id: "vision", label: "Vision" },
+            { id: "team", label: "Team" },
+          ].map(({ id, label }) => (
+            <li key={id} className="py-2">
+              <a href={`#${id}`} onClick={() => setActiveSection(id)}>
+                <div className="w-40 flex items-center">
+                  <span
+                    className={`w-full text-left text-black transition-all py-2 pl-2 ${
+                      activeSection === id
+                        ? "bg-black text-white rounded-r-xl"
+                        : "hover:bg-black hover:text-white hover:rounded-r-xl"
+                    }`}
+                  >
+                    {label}
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
-      <section className="py-12 bg-[#F4F4F4] h-[650px] p-50 pt-30">
+      <section
+        id="mission"
+        className="py-12 bg-gradient-to-b from-[#F4F4F4] to-[#dfdddd]  p-50 pt-30 pb-30"
+      >
         <div className="grid grid-cols-2 items-center">
           <div className="flex justify-center">
             <img
@@ -99,16 +114,20 @@ const MainPage = () => {
               </p>
             </div>
             <button
-              className="text-white"
+              className="relative overflow-hidden text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
               onClick={() => navigate("/writeup0")}
             >
+              <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-500 hover:opacity-0"></span>
               Read more
             </button>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-[#EAEAEA] h-[650px] p-50 pt-30">
+      <section
+        id="vision"
+        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8] pb-30 p-70 pt-30"
+      >
         <div className="grid grid-cols-2 items-center">
           <div>
             <div>
@@ -129,9 +148,13 @@ const MainPage = () => {
                 quae modi.
               </p>
             </div>
-            <div>
-              <button className="text-white">Read more</button>
-            </div>
+            <button
+              className="relative overflow-hidden text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
+              onClick={() => navigate("/")}
+            >
+              <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-500 hover:opacity-0"></span>
+              Read more
+            </button>
           </div>
           <div className="flex justify-center">
             <img
@@ -143,7 +166,10 @@ const MainPage = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#E1E1E1] h-[650px] pt-30">
+      <section
+        id="team"
+        className="py-12 bg-gradient-to-b from-[#f1efef] to-[#ebeaea] pb-30 pt-30"
+      >
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-3xl font-semibold text-[#000000] mb-8 text-center animate__animated animate__fadeInUp">
             Meet the Team
