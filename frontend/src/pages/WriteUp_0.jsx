@@ -1,3 +1,4 @@
+import GoogleDocEmbed from "../components/GoogleDocEmbed.jsx";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import for navigation
 
@@ -13,10 +14,11 @@ const WriteUp_0 = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-[#F4F4F4] to-[#dfdddd] py-20 w-screen flex flex-col items-center text-black p-4">
+
+    <div className="bg-white h-screen w-screen flex flex-col justify-center items-center text-black p-4">
       <h1 className="text-xl font-bold mb-4">Title</h1>
       <div className="bg-white p-6 rounded-xl shadow-xl w-3/4 mb-4">
-        <pre className="text-gray-700">{content}</pre>
+        <pre className="text-gray-700"><GoogleDocEmbed docId={"2PACX-1vTuMRcJlLCFNtNQC9vw6quRtP3u1XEABgZ_qEiHQxjM_QnBkfcRVtkpgW4sSBt_X1NTW5iMTnQdPu3D"} height="500px" /></pre>
       </div>
       <button
         onClick={() => navigate(-1)} // Navigate back
