@@ -4,7 +4,7 @@ const GoogleDocEmbed = ({ docId, height = "600px" }) => {
     const iframeSrc = `https://docs.google.com/document/d/e/${docId}/pub?embedded=true`;
   
     return (
-      <div style={styles.container}>
+      <div className="h-screen" style={styles.container}>
         <iframe
           src={iframeSrc}
           style={styles.iframe}
@@ -18,14 +18,9 @@ const GoogleDocEmbed = ({ docId, height = "600px" }) => {
   
   const styles = {
     container: {
-      maxWidth: "800px",
-      margin: "auto",
-      padding: "10px",
-      border: "2px solid #ccc",
-      borderRadius: "10px",
-      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-      overflow: "hidden",
-      backgroundColor: "#f9f9f9",
+      maxWidth: "900px",
+      width: "1000px",
+      backgroundColor: "transparent",
     },
     iframe: {
       width: "100%",

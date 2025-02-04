@@ -59,8 +59,8 @@ const MainPage = () => {
       <div className="fixed top-0 left-0 bg-transparent py-10 px-5">
         <ul>
           {[
-            { id: "mission", label: "Mission" },
-            { id: "vision", label: "Vision" },
+            { id: "home", label: "Home" },
+            { id: "writeup0", label: "Writeup 0" },
             { id: "team", label: "Team" },
           ].map(({ id, label }) => (
             <li key={id} className="py-2">
@@ -83,8 +83,43 @@ const MainPage = () => {
       </div>
 
       <section
-        id="mission"
-        className="py-12 bg-gradient-to-b from-[#F4F4F4] to-[#dfdddd]  p-50 pt-30 pb-30"
+        id="home"
+        className="py-12 bg-gradient-to-b from-[#F4F4F4] to-[#dfdddd] pb-30 p-70 pt-30"
+      >
+        <div className="grid grid-cols-2 items-center">
+          <div>
+            <div>
+              <h2 className="text-3xl font-semibold text-[#000000] mb-4">
+                Home
+              </h2>
+              <p className="text-gray-700 text-lg mb-4 text-justify">
+                Lorem ipsum dolor sit amet. Ut illum dolores et voluptatem
+                voluptatem et deleniti omnis est ullam laudantium ut voluptas
+                veritatis in reprehenderit aperiam. Est neque internos et
+                voluptatem eligendi qui odio quia ex internos perspiciatis ut
+                rerum assumenda. Aut tempora suscipit qui impedit odio ex
+                repellendus delectus est internos sint. In delectus rerum ut
+                veritatis quasi et consequuntur galisum aut adipisci molestiae
+                eos galisum enim ab quas quod. Et nobis dolor in voluptatibus
+                distinctio id velit illum sit dolores dolorum et velit totam.
+                Eos galisum explicabo vel illum doloremque et animi deleniti eos
+                quae modi.
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <img
+              src="origami.png"
+              alt="origami"
+              className="w-full max-w-[300px] h-auto"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="writeup0"
+        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8]  p-50 pt-30 pb-30"
       >
         <div className="grid grid-cols-2 items-center">
           <div className="flex justify-center">
@@ -97,7 +132,7 @@ const MainPage = () => {
           <div>
             <div>
               <h2 className="text-3xl font-semibold text-[#000000] mb-4">
-                Our Mission
+                Title
               </h2>
               <p className="text-gray-700 text-lg mb-4 text-justify">
                 Lorem ipsum dolor sit amet. Ut illum dolores et voluptatem
@@ -125,50 +160,8 @@ const MainPage = () => {
       </section>
 
       <section
-        id="vision"
-        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8] pb-30 p-70 pt-30"
-      >
-        <div className="grid grid-cols-2 items-center">
-          <div>
-            <div>
-              <h2 className="text-3xl font-semibold text-[#000000] mb-4">
-                Our Vision
-              </h2>
-              <p className="text-gray-700 text-lg mb-4 text-justify">
-                Lorem ipsum dolor sit amet. Ut illum dolores et voluptatem
-                voluptatem et deleniti omnis est ullam laudantium ut voluptas
-                veritatis in reprehenderit aperiam. Est neque internos et
-                voluptatem eligendi qui odio quia ex internos perspiciatis ut
-                rerum assumenda. Aut tempora suscipit qui impedit odio ex
-                repellendus delectus est internos sint. In delectus rerum ut
-                veritatis quasi et consequuntur galisum aut adipisci molestiae
-                eos galisum enim ab quas quod. Et nobis dolor in voluptatibus
-                distinctio id velit illum sit dolores dolorum et velit totam.
-                Eos galisum explicabo vel illum doloremque et animi deleniti eos
-                quae modi.
-              </p>
-            </div>
-            <button
-              className="relative overflow-hidden text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
-              onClick={() => navigate("/")}
-            >
-              <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-500 hover:opacity-0"></span>
-              Read more
-            </button>
-          </div>
-          <div className="flex justify-center">
-            <img
-              src="origami.png"
-              alt="origami"
-              className="w-full max-w-[300px] h-auto"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section
         id="team"
-        className="py-12 bg-gradient-to-b from-[#f1efef] to-[#ebeaea] pb-30 pt-30"
+        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8] pb-30 pt-30"
       >
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-3xl font-semibold text-[#000000] mb-8 text-center animate__animated animate__fadeInUp">

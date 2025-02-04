@@ -1,28 +1,59 @@
 import GoogleDocEmbed from "../components/GoogleDocEmbed.jsx";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom"; // Import for navigation
 
 const WriteUp_0 = () => {
-  const [content, setContent] = useState("");
   const navigate = useNavigate(); // Hook for navigation
 
-  useEffect(() => {
-    fetch("/write0.txt")
-      .then((response) => response.text())
-      .then((text) => setContent(text))
-      .catch((error) => console.error("Error loading the file:", error));
-  }, []);
-
   return (
+    <div className="bg-white w-screen flex flex-col items-center justify-center ">
+      <div className="p-4 pt-20 space-y-2 text-center">
+        <h2 className="text-black text-8xl font-bold">Human</h2>
+        <h2 className="text-black text-8xl font-bold">Factors</h2>
+        <h3 className="text-black text-xl font-medium">IN COMPUTER SECURITY</h3>
+        <h3 className="text-black text-xl font-medium">WRITEUP 0</h3>
 
-    <div className="bg-white h-screen w-screen flex flex-col justify-center items-center text-black p-4">
-      <h1 className="text-xl font-bold mb-4">Title</h1>
-      <div className="bg-white p-6 rounded-xl shadow-xl w-3/4 mb-4">
-        <pre className="text-gray-700"><GoogleDocEmbed docId={"2PACX-1vTuMRcJlLCFNtNQC9vw6quRtP3u1XEABgZ_qEiHQxjM_QnBkfcRVtkpgW4sSBt_X1NTW5iMTnQdPu3D"} height="500px" /></pre>
+        <div className="mt-4">
+          <img
+            src="/brain.png"
+            alt="brain"
+            className="w-[20%] h-auto mx-auto"
+          />
+          <br />
+          <img
+            src="/page2.png"
+            alt="page2"
+            className="w-[90%] h-auto mx-auto"
+          />
+          <img
+            src="/page3.png"
+            alt="page2"
+            className="w-[90%] h-auto mx-auto"
+          />
+          <img
+            src="/page4.png"
+            alt="page2"
+            className="w-[90%] h-auto mx-auto"
+          />
+          <img
+            src="/page5.png"
+            alt="page2"
+            className="w-[90%] h-auto mx-auto"
+          />
+        </div>
       </div>
+
+      {/* <div>
+        <GoogleDocEmbed
+          docId="2PACX-1vTuMRcJlLCFNtNQC9vw6quRtP3u1XEABgZ_qEiHQxjM_QnBkfcRVtkpgW4sSBt_X1NTW5iMTnQdPu3D"
+          height="600px"
+        />
+      </div> */}
+
+      {/* Back Button */}
       <button
-        onClick={() => navigate(-1)} // Navigate back
-        className="fixed bottom-4 left-4  overflow-hidden text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
+        onClick={() => navigate(-1)}
+        className="fixed bottom-4 left-4 text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
       >
         Back
       </button>
