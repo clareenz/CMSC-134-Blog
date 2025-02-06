@@ -374,7 +374,7 @@ const WriteUp_0 = () => {
           <br />
           <div>
             <h2 className="text-3xl custom-font text-[#000000] mb-4">
-              Stardew Valley Incident
+              Insider Threat
             </h2>
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
