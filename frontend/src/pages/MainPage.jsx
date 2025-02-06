@@ -67,7 +67,7 @@ const MainPage = () => {
               <a href={`#${id}`} onClick={() => setActiveSection(id)}>
                 <div className="w-40 flex items-center">
                   <span
-                    className={`w-full text-left text-black transition-all py-2 pl-2 ${
+                    className={`w-full text-left text-black transition-all py-2 pl-2 rounded-r-xl ${
                       activeSection === id
                         ? "bg-black text-white rounded-r-xl"
                         : "hover:bg-black hover:text-white hover:rounded-r-xl"
