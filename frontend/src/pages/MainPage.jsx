@@ -55,7 +55,7 @@ const MainPage = () => {
           {[
             { id: "home", label: "Home" },
             { id: "writeup0", label: "Writeup 0" },
-            { id: "members", label: "Members" },
+            { id: "authors", label: "Authors" },
           ].map(({ id, label }) => (
             <li key={id} className="py-1">
               <a href={`#${id}`} onClick={() => setActiveSection(id)}>
@@ -169,7 +169,7 @@ const MainPage = () => {
       >
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-3xl font-semibold text-[#000000] mb-8 text-center animate__animated animate__fadeInUp">
-            Members
+            Meet the Authors
           </h2>
           <div className="flex flex-wrap justify-center">
             {teamMembers.map((member, index) => (
