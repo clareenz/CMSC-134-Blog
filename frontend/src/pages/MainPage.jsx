@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
 const MainPage = () => {
   const navigate = useNavigate();
