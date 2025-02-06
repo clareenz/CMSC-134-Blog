@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import './styles.css';
+import "./styles.css";
+import Footer from "../components/footer";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -127,25 +128,29 @@ const MainPage = () => {
           <div>
             <div>
               <h2 className="text-3xl font-semibold text-[#000000] mb-4">
-                Stardew Valley Incident
+                I Know There Are a Lot of Problems in My Area, I Have a Mirror
               </h2>
-              <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
+              <div className="text-gray-700 text-md font-light leading-relaxed text-justify">
                 <p>
-                  &quot;Teh na hack acc ko sa Steam, akong stardew nawala, andun
-                  na sa Germany :(("
+                  No matter how advanced security gets, humans always find a way
+                  to speedrun getting hacked. From using "iloveyou" as a
+                  password to signing into a fake Steam giveaway faster than you
+                  can say "free gift ni?", we're often the biggest threat to our
+                  own security. This write-up dives into the human side of
+                  cybersecurity fails—whether it's falling for phishing scams
+                  ("Akala ko need for security"—famous last words), ignoring
+                  two-factor authentication ("Samok kaayo"), or reusing the same
+                  password everywhere ("Kinsa gud mag-hack nako?"). It also
+                  looks at the eternal struggle between usability and
+                  security—because when security gets too strict, people start
+                  writing passwords on sticky notes or rage-quitting sign-ins
+                  altogether. At the end of the day, cybersecurity isn’t just
+                  about strong encryption—it’s about making sure we don’t
+                  accidentally hand over our accounts like free samples at the
+                  mall.
                 </p>
-                <br />
-                <p>
-                  "Akala ko <span className="bg-[#595959] text-white">free gift sa Steam,</span> nagrequest siya akala ko natural
-                  yon, na need sign in again for <span className="bg-[#595959] text-white">security</span> like input password
-                  etc, tas ininput ko hahaha <span className="bg-[#595959] text-white">tas shempre taas kaayo ang email sa
-                  steam di kona binasa</span> na may location pala nakalagay hahaha di
-                  ko napansin kay <span className="bg-[#595959] text-white">tamad man me.</span>"
-                </p>
-                <div className="flex justify-end">
-                  <p className="text-sm">-Nikka 2024</p>
-                </div>
               </div>
+              <br />
             </div>
             <button
               className="custom-button"
@@ -204,57 +209,7 @@ const MainPage = () => {
         </div>
       </section>
 
-      <footer className="bg-black py-10 border-t border-gray-300">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-          {/* Left Column - Branding */}
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-white tracking-wide">
-              CMSC 134 | Cybersecurity Blog
-            </h2>
-            <p className="text-gray-300 text-sm">
-              University of the Philippines Cebu
-            </p>
-            <p className="text-gray-300 text-sm">
-              Bachelor of Science in Computer Science
-            </p>
-            <div className="text-left text-gray-500 text-sm mt-6">
-              © {new Date().getFullYear()} CMSC 134 | All Rights Reserved
-            </div>
-          </div>
-
-          {/* Middle Column - Submission Info */}
-          <div className="space-y-2">
-            <div className=" text-white flex flex-col">
-              <span className="text-lg font-semibold">Submitted to:</span>
-              <span className="text-gray-300">Eli Edrian Tan</span>
-            </div>
-          </div>
-
-          {/* Right Column - Profile Images */}
-          <div>
-            <div className="text-lg font-semibold text-white ">
-              Submitted by:
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
-              {[
-                { src: "/cat4.jpg", name: "Zayne" },
-                { src: "/cat3.jpg", name: "Mc" },
-                { src: "/cat5.jpg", name: "Nikka" },
-                { src: "/cat2.jpg", name: "CJ" },
-              ].map(({ src, name }, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <img
-                    src={src}
-                    alt={name}
-                    className="w-14 h-14 rounded-full object-cover border border-gray-300 shadow-md hover:scale-105 transition-transform"
-                  />
-                  <span className="text-xs text-gray-400 mt-1">{name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
