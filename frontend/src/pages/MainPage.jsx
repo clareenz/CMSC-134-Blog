@@ -136,11 +136,11 @@ const MainPage = () => {
                 </p>
                 <br />
                 <p>
-                  "Akala ko free gift sa Steam, nagrequest siya akala ko natural
-                  yon, na need sign in again for security like input password
-                  etc, tas ininput ko hahaha tas shempre taas kaayo ang email sa
-                  steam di kona binasa na may location pala nakalagay hahaha di
-                  ko napansin kay tamad man me."
+                  "Akala ko <span className="bg-[#595959] text-white">free gift sa Steam,</span> nagrequest siya akala ko natural
+                  yon, na need sign in again for <span className="bg-[#595959] text-white">security</span> like input password
+                  etc, tas ininput ko hahaha <span className="bg-[#595959] text-white">tas shempre taas kaayo ang email sa
+                  steam di kona binasa</span> na may location pala nakalagay hahaha di
+                  ko napansin kay <span className="bg-[#595959] text-white">tamad man me.</span>"
                 </p>
                 <div className="flex justify-end">
                   <p className="text-sm">-Nikka 2024</p>

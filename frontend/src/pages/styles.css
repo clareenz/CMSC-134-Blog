@@ -33,3 +33,15 @@
     outline: none !important;
   }
   
+
+  @font-face {
+    font-family: 'Wangloe Inked';
+    src: url('../../public/wangloe-inked.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .custom-font {
+    font-family: 'Wangloe Inked', sans-serif;
+  }
+    
