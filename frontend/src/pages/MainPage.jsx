@@ -79,7 +79,7 @@ const MainPage = () => {
         className="py-12 bg-gradient-to-b from-[#F4F4F4] to-[#E2E2E2]  p-70 pt-30 pb-30"
       >
         <div className="grid grid-cols-2 items-center">
-          <div className="text-gray-700 text-xl font-light leading-relaxed">
+          <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
             <h2 className="text-3xl font-mono text-[#000000] mb-4">
               404 Error:
             </h2>
@@ -126,21 +126,25 @@ const MainPage = () => {
           <div>
             <div>
               <h2 className="text-3xl font-semibold text-[#000000] mb-4">
-                Title
+                Stardew Valley Incident
               </h2>
-              <p className="text-gray-700 text-lg mb-4 font-sans text-justify">
-                Lorem ipsum dolor sit amet. Ut illum dolores et voluptatem
-                voluptatem et deleniti omnis est ullam laudantium ut voluptas
-                veritatis in reprehenderit aperiam. Est neque internos et
-                voluptatem eligendi qui odio quia ex internos perspiciatis ut
-                rerum assumenda. Aut tempora suscipit qui impedit odio ex
-                repellendus delectus est internos sint. In delectus rerum ut
-                veritatis quasi et consequuntur galisum aut adipisci molestiae
-                eos galisum enim ab quas quod. Et nobis dolor in voluptatibus
-                distinctio id velit illum sit dolores dolorum et velit totam.
-                Eos galisum explicabo vel illum doloremque et animi deleniti eos
-                quae modi.
-              </p>
+              <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
+                <p>
+                  &quot;Teh na hack acc ko sa Steam, akong stardew nawala, andun
+                  na sa Germany :(("
+                </p>
+                <br />
+                <p>
+                  "Akala ko free gift sa Steam, nagrequest siya akala ko natural
+                  yon, na need sign in again for security like input password
+                  etc, tas ininput ko hahaha tas shempre taas kaayo ang email sa
+                  steam di kona binasa na may location pala nakalagay hahaha di
+                  ko napansin kay tamad man me."
+                </p>
+                <div className="flex justify-end">
+                  <p className="text-sm">-Nikka</p>
+                </div>
+              </div>
             </div>
             <button
               className="relative overflow-hidden text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
