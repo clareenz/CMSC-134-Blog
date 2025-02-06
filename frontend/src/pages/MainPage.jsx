@@ -174,13 +174,13 @@ const MainPage = () => {
               >
                 <div className="relative group">
                   {/* Front Card */}
-                  <div className="bg-gradient-to-t from-[#cfcfcf] via-gray-100 to-[#DDDCDC] rounded-xl shadow-lg p-6 text-center  transition-transform duration-300 ease-in-out transform hover:shadow-xl">
+                  <div className="bg-gradient-to-t from-gray-200 via-gray-100 to-[#DDDCDC] rounded-xl shadow-lg p-6 text-center  transition-transform duration-300 ease-in-out transform hover:shadow-xl">
                     <img
                       src={member.image}
                       alt="Team member"
                       className="w-32 h-32 rounded-full mx-auto object-cover shadow-md"
                     />
-                    <h3 className="text-xl font-semibold text-black mt-4">
+                    <h3 className="text-xl font-mono text-black mt-4">
                       {member.name}
                     </h3>
                     {/* Optional: Member role and skills */}
@@ -189,7 +189,7 @@ const MainPage = () => {
                   </div>
 
                   {/* Back Card (appears on hover) */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#cfcfcf] via-gray-100 to-[#DDDCDC] rounded-xl shadow-lg p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center">
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-gray-100 to-[#DDDCDC] rounded-xl shadow-lg p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center">
                     <h3 className="text-xl font-semibold text-black">
                       {member.name}
                     </h3>
