@@ -1,0 +1,35 @@
+/* styles.css */
+.custom-button {
+    border: none; /* Ensure there's no border */
+    outline: none; /* Remove default outline */
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect */
+  .custom-button:hover {
+    transform: scale(1.1);
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none !important; /* Ensure no outline on hover */
+  }
+  
+  /* Focus effect - Removing browser blue border */
+  .custom-button:focus,
+  .custom-button:focus-visible,
+  .custom-button:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Active effect */
+  .custom-button:active {
+    transform: scale(0.98);
+    outline: none !important;
+  }
+  

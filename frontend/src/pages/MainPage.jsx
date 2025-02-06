@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import './styles.css';
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -142,15 +143,15 @@ const MainPage = () => {
                   ko napansin kay tamad man me."
                 </p>
                 <div className="flex justify-end">
-                  <p className="text-sm">-Nikka</p>
+                  <p className="text-sm">-Nikka 2024</p>
                 </div>
               </div>
             </div>
             <button
-              className="relative overflow-hidden text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
+              className="custom-button"
               onClick={() => navigate("/writeup0")}
             >
-              <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-500 hover:opacity-0"></span>
+              <span></span>
               Read more
             </button>
           </div>

@@ -53,7 +53,7 @@ const WriteUp_0 = () => {
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}
-        className="fixed bottom-4 left-4 text-white px-6 py-3 bg-black rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-95"
+        className="fixed bottom-4 left-4 px-6 py-3 custom-button"
       >
         Back
       </button>
