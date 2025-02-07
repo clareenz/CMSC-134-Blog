@@ -9,7 +9,7 @@ const WriteUp_0 = () => {
 
   return (
     <div className="bg-white">
-      <div className="w-screen min-h-screen flex flex-col items-center px-50">
+      <div className=" flex flex-col items-center px-50">
         <div className="text-center py-20">
           <h2 className="text-black text-8xl font-bold custom-font">Human</h2>
           <h2 className="text-black text-8xl font-bold custom-font">Factors</h2>
@@ -80,13 +80,6 @@ const WriteUp_0 = () => {
         <section className="py-12 pt-10">
           <div className="grid grid-cols-2 space-x-8">
             <div className="relative">
-              {/* Square Image as the Background */}
-              <img
-                src="blacksquare.png"
-                alt="square"
-                className="absolute left-[70px]  h-full opacity-30 rotate-90 z-0"
-              />
-
               {/* Main Image */}
               <img
                 src="01.png"
@@ -94,7 +87,6 @@ const WriteUp_0 = () => {
                 className="relative w-full h-auto z-10"
               />
             </div>
-
             <div>
               <div>
                 <h2 className="text-3xl custom-font text-[#000000] mb-4">
@@ -128,17 +120,13 @@ const WriteUp_0 = () => {
         {/*-2*/}
         <section className="relative">
           {/* Background Image */}
-          <img
-            src="bb.png"
-            alt="square"
-            className="absolute top-10 left-[-60px] w-[90%] h-[80%] opacity-10 z-0"
-          />
+
           {/* Grid Content */}
           <div className="grid grid-cols-2 items-center relative z-10">
             {/* First Column */}
             <div>
               <div>
-                <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
+                <div className="text-gray-700 text-xl bg-[#E5E5E5] p-10 font-light leading-relaxed text-justify">
                   <p>
                     The reuse of weak passwords across multiple accounts further
                     increases the risk, as a single data breach can compromise
@@ -163,12 +151,6 @@ const WriteUp_0 = () => {
 
         <section className="py-1 pt-20 relative">
           {/* Extended Background Image */}
-          <img
-            src="bb.png"
-            alt="square"
-            className="absolute top-63 left-12 w-full h-[60%] opacity-90 z-0"
-          />
-
           {/* Content */}
           <div className="grid grid-cols-2 space-x-8 relative z-10">
             {/* First Column */}
@@ -195,7 +177,7 @@ const WriteUp_0 = () => {
                     fishing?”, you might ask. Yes. In a way.
                   </p>
                   <br />
-                  <p className="text-white">
+                  <p className="bg-[#E5E5E5] p-5">
                     Phishing attacks are a type of cyberattack where attackers
                     trick people into revealing sensitive information, such as
                     passwords, credit card numbers, or personal data. This is
@@ -238,30 +220,33 @@ const WriteUp_0 = () => {
           </div>
         </section>
         <section className="py-12 pt-10 relative">
-        <img
-            src="bb.png"
-            alt="square"
-            className="absolute top-0 left-12 w-full h-[52%] opacity-10 z-0"
-          />
           <div className="grid grid-cols-2 space-x-8">
             <div className="justify-center">
-              <img src="05.png" alt="fatigue" className="w-full h-auto relative" />
+              <img
+                src="05.png"
+                alt="fatigue"
+                className="w-full h-auto relative"
+              />
             </div>
             <div>
               <div>
-                <h2 className="text-3xl custom-font text-[#000000] mb-4">
-                  Security Fatigue
-                </h2>
                 <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
-                  <p>
-                    <span className="italic">Never have I ever changed passwords for the nth time.</span> Most
-                    people – maybe even all – have updated their passwords
-                    repeatedly, only to reuse an old one because it’s easier to
-                    remember, risking security across multiple accounts. Some
-                    even abandon transactions altogether, finding the process of
-                    creating a new account or going through a ‘tedious’
-                    verification step too inconvenient.
-                  </p>
+                  <div className="bg-[#E5E5E5] p-5">
+                    <h2 className="text-3xl custom-font text-[#000000] mb-4">
+                      Security Fatigue
+                    </h2>
+                    <p>
+                      <span className="italic">
+                        Never have I ever changed passwords for the nth time.
+                      </span>{" "}
+                      Most people – maybe even all – have updated their
+                      passwords repeatedly, only to reuse an old one because
+                      it’s easier to remember, risking security across multiple
+                      accounts. Some even abandon transactions altogether,
+                      finding the process of creating a new account or going
+                      through a ‘tedious’ verification step too inconvenient.
+                    </p>
+                  </div>
                   <br />
                   <p>
                     Security fatigue refers to the feeling of frustration,
@@ -304,12 +289,7 @@ const WriteUp_0 = () => {
             </div>
           </div>
         </section>
-        <section className="relative">
-        <img
-            src="blacksquare.png"
-            alt="square"
-            className="absolute bottom-7 left-160 w-[45%] h-[80%] rotate-90 opacity-30 z-0"
-          />
+        <section className="relative bg-[#E5E5E5] p-5">
           <div className="grid grid-cols-2 items-center">
             <div>
               <h2 className="text-3xl custom-font text-[#000000] mb-4">
@@ -338,12 +318,11 @@ const WriteUp_0 = () => {
                 className="w-full max-w-[400px] h-auto relative"
               />
             </div>
-            <br />
-            <br />
           </div>
         </section>
         <section>
           <div>
+            <br />
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
                 On the developer side, prioritizing usability may mean
@@ -362,16 +341,11 @@ const WriteUp_0 = () => {
           </div>
         </section>
         <section className="py-1 pt-10 relative">
-        <img
-            src="blacksquare.png"
-            alt="square"
-            className="absolute bottom-2 right-160 w-[45%] h-[90%] opacity-100 z-0"
-          />
           <br />
           <br />
           <div className="grid grid-cols-2 space-x-8">
-            <div className="flex flex-col">
-              <h2 className="text-3xl custom-font text-[#fffff] mb-4 relative">
+            <div className="flex flex-col bg-[#000000] p-5">
+              <h2 className="text-3xl custom-font text-white mb-4 relative">
                 Lack of Security Awareness
               </h2>
               <div className="justify-center">
