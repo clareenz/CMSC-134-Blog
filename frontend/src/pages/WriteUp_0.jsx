@@ -190,7 +190,7 @@ const WriteUp_0 = () => {
           {/* Background Image */}
 
           {/* Grid Content */}
-          <div className="grid grid-cols-2 items-center relative z-10">
+          <div className="grid grid-cols-2 items-center relative z-10 space-x-8">
             {/* First Column */}
             <div>
               <div>
@@ -291,7 +291,7 @@ const WriteUp_0 = () => {
           <br />
         </section>
         <section className="relative">
-          <div className="grid grid-cols-2 items-center">
+          <div className="grid grid-cols-2 items-center space-x-8">
             <div>
               <h2 className="text-3xl custom-font text-[#000000] mb-4">
                 Usability vs Security
