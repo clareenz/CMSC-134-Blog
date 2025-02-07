@@ -37,6 +37,11 @@ const WriteUp_0 = () => {
             </h2>
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
+                &quot;Teh na hack acc ko sa Steam, akong stardew nawala, andun
+                na sa Germany :(("
+              </p>
+              <br />
+              <p>
                 "Nag request siya akala ko natural yon, na need sign in again
                 for security like input pass diba ana man sa iba hahaah tas ako
                 ininput hahahah tas shempre taas kaayo ang email ni steam di
