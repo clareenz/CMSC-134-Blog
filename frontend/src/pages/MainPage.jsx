@@ -99,14 +99,22 @@ const MainPage = () => {
             {/* Origami Image */}
             <div className="relative w-[400px] h-[400px]">
               <img
-                src="butterfly.png"
+                src="four.png"
                 alt="Origami Cybersecurity"
-                className="absolute top-0 left-0 w-full h-full object-cover drop-shadow-md"
+                className="absolute top-0 left-0 w-full h-full object-cover drop-shadow-md z-10"
+                style={{
+                  filter: "invert(50%)",
+                }}
               />
               <img
                 src="blacksquare.png"
                 alt="Origami Cybersecurity"
-                className="absolute top-0 left-0 w-full h-full object-cover drop-shadow-md opacity-10"
+                className="absolute top- left-70 w-[50%] h-full object-cover drop-shadow-md opacity-10"
+              />
+              <img
+                src="blacksquare.png"
+                alt="Origami Cybersecurity"
+                className="absolute top-40 left-30 w-[50%] h-full object-cover rotate-90 drop-shadow-md opacity-100"
               />
             </div>
           </div>
@@ -118,12 +126,29 @@ const MainPage = () => {
         className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8]  p-50 pt-30 pb-30"
       >
         <div className="grid grid-cols-2 items-center">
-          <div className="flex justify-center">
-            <img
-              src="origami.png"
-              alt="origami"
-              className="w-full max-w-[400px] h-auto"
-            />
+          <div className="flex justify-center gap-8">
+            {/* Origami Image */}
+            <div className="relative w-[400px] h-[400px]">
+              <img
+                src="five.png"
+                alt="Origami Cybersecurity"
+                className="absolute top-0 left-0 w-full h-full object-cover drop-shadow-md z-10"
+                style={{
+                  filter: "invert(50%)",
+                }}
+              />
+              <img
+                src="blacksquare.png"
+                alt="Origami Cybersecurity"
+                className="absolute top-25 left-[-10%] w-[40%] h-[50%] object-cover drop-shadow-md opacity-100"
+              />
+
+              <img
+                src="blacksquare.png"
+                alt="Origami Cybersecurity"
+                className="absolute top-40 left-10 w-[50%] h-full object-cover rotate-90 drop-shadow-md opacity-10"
+              />
+            </div>
           </div>
           <div>
             <div>

@@ -8,25 +8,29 @@ const WriteUp_0 = () => {
   const navigate = useNavigate(); // Hook for navigation
 
   return (
-    <div>
-      <div className="bg-white w-screen min-h-screen flex flex-col items-center">
+    <div className="bg-white">
+      <div className="w-screen min-h-screen flex flex-col items-center px-50">
         <div className="text-center py-20">
           <h2 className="text-black text-8xl font-bold custom-font">Human</h2>
           <h2 className="text-black text-8xl font-bold custom-font">Factors</h2>
-          <h3 className="text-black text-xl font-medium">
+          <br />
+          <h3 className="text-black text-xl font-light">
             IN COMPUTER SECURITY
           </h3>
-          <h3 className="text-black text-xl font-medium">WRITEUP 0</h3>
+          <h3 className="text-black text-xl font-light">WRITEUP 0</h3>
+          <br />
           <img
             src="/brain.png"
             alt="brain"
             className="w-[50%] h-auto mx-auto py-3"
           />
+          <br />
+          <h3 className="text-black text-sm font-light">February 8, 2025</h3>
         </div>
         <br />
         <br />
         {/*1*/}
-        <section className="bg-white px-30">
+        <section>
           <div>
             <h2 className="text-3xl custom-font text-[#000000] mb-4">
               Stardew Valley Incident
@@ -73,15 +77,24 @@ const WriteUp_0 = () => {
           </div>
         </section>
         {/*2*/}
-        <section className="py-12 p-50 pt-10">
-          <div className="grid grid-cols-2 items-center">
-            <div className="flex justify-center">
+        <section className="py-12 pt-10">
+          <div className="grid grid-cols-2 space-x-8">
+            <div className="relative">
+              {/* Square Image as the Background */}
               <img
-                src="origami.png"
-                alt="origami"
-                className="w-full max-w-[400px] h-auto"
+                src="blacksquare.png"
+                alt="square"
+                className="absolute left-[70px]  h-full opacity-30 rotate-90 z-0"
+              />
+
+              {/* Main Image */}
+              <img
+                src="01.png"
+                alt="weakpass"
+                className="relative w-full h-auto z-10"
               />
             </div>
+
             <div>
               <div>
                 <h2 className="text-3xl custom-font text-[#000000] mb-4">
@@ -113,8 +126,16 @@ const WriteUp_0 = () => {
           </div>
         </section>
         {/*-2*/}
-        <section className="px-50">
-          <div className="grid grid-cols-2 items-center">
+        <section className="relative">
+          {/* Background Image */}
+          <img
+            src="bb.png"
+            alt="square"
+            className="absolute top-10 left-[-60px] w-[90%] h-[80%] opacity-10 z-0"
+          />
+          {/* Grid Content */}
+          <div className="grid grid-cols-2 items-center relative z-10">
+            {/* First Column */}
             <div>
               <div>
                 <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
@@ -129,39 +150,52 @@ const WriteUp_0 = () => {
                 </div>
               </div>
             </div>
+            {/* Second Column */}
             <div className="flex justify-center">
               <img
-                src="origami.png"
-                alt="origami"
+                src="02.png"
+                alt="weakpass"
                 className="w-full max-w-[400px] h-auto"
               />
             </div>
           </div>
         </section>
-        <section className="py-1 p-50 pt-10">
-          <div className="grid grid-cols-2 items-center">
+
+        <section className="py-1 pt-20 relative">
+          {/* Extended Background Image */}
+          <img
+            src="bb.png"
+            alt="square"
+            className="absolute top-63 left-12 w-full h-[60%] opacity-90 z-0"
+          />
+
+          {/* Content */}
+          <div className="grid grid-cols-2 space-x-8 relative z-10">
+            {/* First Column */}
             <div className="flex flex-col">
               <h2 className="text-3xl custom-font text-[#000000] mb-4">
                 Phishing Attacks
               </h2>
-              <div className="flex justify-center">
+              <div className="justify-center">
                 <img
-                  src="origami.png"
-                  alt="origami"
-                  className="w-full max-w-[400px] h-auto"
+                  src="03.png"
+                  alt="phishing"
+                  className="w-full h-auto z-10"
                 />
               </div>
             </div>
+
+            {/* Second Column */}
             <div>
               <div>
-                <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
+                <div className="text-gray-700 text-xl font-light leading-relaxed text-justify pt-16">
                   <p>
                     Another common security risk that baits humans with their
                     naivety is phishing. “What is phishing? Is it similar to
                     fishing?”, you might ask. Yes. In a way.
                   </p>
                   <br />
-                  <p>
+                  <p className="text-white">
                     Phishing attacks are a type of cyberattack where attackers
                     trick people into revealing sensitive information, such as
                     passwords, credit card numbers, or personal data. This is
@@ -176,8 +210,11 @@ const WriteUp_0 = () => {
             </div>
           </div>
         </section>
-        <section className="bg-white px-30">
+
+        <section>
           <div>
+            <br />
+            <br />
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
                 Phishing works by sending fake emails or messages that look like
@@ -187,24 +224,28 @@ const WriteUp_0 = () => {
                 The attacker uses the stolen data to access accounts, commit
                 fraud, or even do so much worse.
               </p>
+              <br />
               <div className="flex justify-center">
                 <img
-                  src="origami.png"
-                  alt="origami"
+                  src="04.png"
+                  alt="phishing"
                   className="w-full max-w-[400px] h-auto"
                 />
               </div>
+              <br />
+              <br />
             </div>
           </div>
         </section>
-        <section className="py-12 p-50 pt-10">
-          <div className="grid grid-cols-2 items-center">
-            <div className="flex justify-center">
-              <img
-                src="origami.png"
-                alt="origami"
-                className="w-full max-w-[400px] h-auto"
-              />
+        <section className="py-12 pt-10 relative">
+        <img
+            src="bb.png"
+            alt="square"
+            className="absolute top-0 left-12 w-full h-[52%] opacity-10 z-0"
+          />
+          <div className="grid grid-cols-2 space-x-8">
+            <div className="justify-center">
+              <img src="05.png" alt="fatigue" className="w-full h-auto relative" />
             </div>
             <div>
               <div>
@@ -213,7 +254,7 @@ const WriteUp_0 = () => {
                 </h2>
                 <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
                   <p>
-                    Never have I ever changed passwords for the nth time. Most
+                    <span className="italic">Never have I ever changed passwords for the nth time.</span> Most
                     people – maybe even all – have updated their passwords
                     repeatedly, only to reuse an old one because it’s easier to
                     remember, risking security across multiple accounts. Some
@@ -237,7 +278,7 @@ const WriteUp_0 = () => {
           </div>
         </section>
         {/*1*/}
-        <section className="bg-white px-30">
+        <section>
           <div>
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
@@ -259,10 +300,16 @@ const WriteUp_0 = () => {
                 to take shortcuts. Security shouldn’t come at the cost of
                 usability.
               </p>
+              <br />
             </div>
           </div>
         </section>
-        <section className="px-50">
+        <section className="relative">
+        <img
+            src="blacksquare.png"
+            alt="square"
+            className="absolute bottom-7 left-160 w-[45%] h-[80%] rotate-90 opacity-30 z-0"
+          />
           <div className="grid grid-cols-2 items-center">
             <div>
               <h2 className="text-3xl custom-font text-[#000000] mb-4">
@@ -286,14 +333,16 @@ const WriteUp_0 = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="origami.png"
-                alt="origami"
-                className="w-full max-w-[400px] h-auto"
+                src="06.png"
+                alt="uvs"
+                className="w-full max-w-[400px] h-auto relative"
               />
             </div>
+            <br />
+            <br />
           </div>
         </section>
-        <section className="bg-white px-30">
+        <section>
           <div>
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
@@ -312,17 +361,24 @@ const WriteUp_0 = () => {
             </div>
           </div>
         </section>
-        <section className="py-1 p-50 pt-10">
-          <div className="grid grid-cols-2 items-center">
+        <section className="py-1 pt-10 relative">
+        <img
+            src="blacksquare.png"
+            alt="square"
+            className="absolute bottom-2 right-160 w-[45%] h-[90%] opacity-100 z-0"
+          />
+          <br />
+          <br />
+          <div className="grid grid-cols-2 space-x-8">
             <div className="flex flex-col">
-              <h2 className="text-3xl custom-font text-[#000000] mb-4">
+              <h2 className="text-3xl custom-font text-[#fffff] mb-4 relative">
                 Lack of Security Awareness
               </h2>
-              <div className="flex justify-center">
+              <div className="justify-center">
                 <img
-                  src="origami.png"
-                  alt="origami"
-                  className="w-full max-w-[400px] h-auto"
+                  src="07.png"
+                  alt="secawareness"
+                  className="w-full h-auto relative"
                 />
               </div>
             </div>
@@ -352,7 +408,8 @@ const WriteUp_0 = () => {
             </div>
           </div>
         </section>
-        <section className="bg-white px-30">
+        <section>
+          <br />
           <div>
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
@@ -369,7 +426,8 @@ const WriteUp_0 = () => {
           </div>
         </section>
         {/*1*/}
-        <section className="bg-white px-30">
+        <section>
+          <br />
           <br />
           <br />
           <div>
@@ -407,7 +465,7 @@ const WriteUp_0 = () => {
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="fixed top-4 left-4 px-6 py-3 custom-button"
+          className="fixed bottom-4 left-4 px-6 py-3 custom-button"
         >
           Back
         </button>
