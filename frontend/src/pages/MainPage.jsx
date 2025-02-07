@@ -189,7 +189,7 @@ const MainPage = () => {
       </section>
 
       <section
-        id="members"
+        id="authors"
         className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8] pb-70 pt-30"
       >
         <div className="container mx-auto px-6 lg:px-20">
