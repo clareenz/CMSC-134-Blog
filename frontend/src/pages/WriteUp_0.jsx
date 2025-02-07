@@ -37,23 +37,11 @@ const WriteUp_0 = () => {
             </h2>
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
-                &quot;Teh na hack acc ko sa Steam, akong stardew nawala, andun
-                na sa Germany :(("
-              </p>
-              <br />
-              <p>
-                "Akala ko{" "}
-                <span className="bg-[#595959] text-white">
-                  free gift sa Steam,
-                </span>{" "}
-                nagrequest siya akala ko natural yon, na need sign in again for{" "}
-                <span className="bg-[#595959] text-white">security</span> like
-                input password etc, tas ininput ko hahaha{" "}
-                <span className="bg-[#595959] text-white">
-                  tas shempre taas kaayo ang email sa steam di kona binasa
-                </span>{" "}
-                na may location pala nakalagay hahaha di ko napansin kay{" "}
-                <span className="bg-[#595959] text-white">tamad man me.</span>"
+                "Nag request siya akala ko natural yon, na need sign in again
+                for security like input pass diba ana man sa iba hahaah tas ako
+                ininput hahahah tas shempre taas kaayo ang email ni steam di
+                kona binasa na may location pala nakalagay hahah di ko napansin
+                kay tamad man me"
               </p>
               <div className="flex justify-end">
                 <p className="text-sm">-Nikka 2024</p>
@@ -75,14 +63,16 @@ const WriteUp_0 = () => {
               </p>
             </div>
           </div>
+          <br />
+          <br />
         </section>
         {/*2*/}
-        <section className="py-12 pt-10">
+        <section className="py-12 pt-10 z-10">
           <div className="grid grid-cols-2 space-x-8">
             <div className="relative">
               {/* Main Image */}
               <img
-                src="01.png"
+                src="meme1.png"
                 alt="weakpass"
                 className="relative w-full h-auto z-10"
               />
@@ -122,11 +112,11 @@ const WriteUp_0 = () => {
           {/* Background Image */}
 
           {/* Grid Content */}
-          <div className="grid grid-cols-2 items-center relative z-10">
+          <div className="grid grid-cols-2 items-center relative z-10 space-x-8">
             {/* First Column */}
             <div>
               <div>
-                <div className="text-gray-700 text-xl bg-[#E5E5E5] p-10 font-light leading-relaxed text-justify">
+                <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
                   <p>
                     The reuse of weak passwords across multiple accounts further
                     increases the risk, as a single data breach can compromise
@@ -141,12 +131,14 @@ const WriteUp_0 = () => {
             {/* Second Column */}
             <div className="flex justify-center">
               <img
-                src="02.png"
+                src="meme2.png"
                 alt="weakpass"
                 className="w-full max-w-[400px] h-auto"
               />
             </div>
           </div>
+          <br />
+          <br />
         </section>
 
         <section className="py-1 pt-20 relative">
@@ -160,7 +152,7 @@ const WriteUp_0 = () => {
               </h2>
               <div className="justify-center">
                 <img
-                  src="03.png"
+                  src="meme3.png"
                   alt="phishing"
                   className="w-full h-auto z-10"
                 />
@@ -177,7 +169,7 @@ const WriteUp_0 = () => {
                     fishing?”, you might ask. Yes. In a way.
                   </p>
                   <br />
-                  <p className="bg-[#E5E5E5] p-5">
+                  <p>
                     Phishing attacks are a type of cyberattack where attackers
                     trick people into revealing sensitive information, such as
                     passwords, credit card numbers, or personal data. This is
@@ -193,37 +185,44 @@ const WriteUp_0 = () => {
           </div>
         </section>
 
-        <section>
-          <div>
-            <br />
-            <br />
-            <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
-              <p>
-                Phishing works by sending fake emails or messages that look like
-                it comes from a legitimate source. The messages often contain
-                links to fake websites, then the fake website may ask for login
-                credentials or other personal details, which are then stolen.
-                The attacker uses the stolen data to access accounts, commit
-                fraud, or even do so much worse.
-              </p>
-              <br />
-              <div className="flex justify-center">
-                <img
-                  src="04.png"
-                  alt="phishing"
-                  className="w-full max-w-[400px] h-auto"
-                />
+        {/*-2*/}
+        <section className="relative">
+          {/* Background Image */}
+
+          {/* Grid Content */}
+          <div className="grid grid-cols-2 items-center relative z-10">
+            {/* First Column */}
+            <div>
+              <div>
+                <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
+                  <p>
+                    Phishing works by sending fake emails or messages that look
+                    like it comes from a legitimate source. The messages often
+                    contain links to fake websites, then the fake website may
+                    ask for login credentials or other personal details, which
+                    are then stolen. The attacker uses the stolen data to access
+                    accounts, commit fraud, or even do so much worse.
+                  </p>
+                </div>
               </div>
-              <br />
-              <br />
+            </div>
+            {/* Second Column */}
+            <div className="flex justify-center">
+              <img
+                src="meme4.png"
+                alt="weakpass"
+                className="w-full max-w-[400px] h-auto"
+              />
             </div>
           </div>
+          <br />
+          <br />
         </section>
         <section className="py-12 pt-10 relative">
           <div className="grid grid-cols-2 space-x-8">
             <div className="justify-center">
               <img
-                src="05.png"
+                src="meme5.png"
                 alt="fatigue"
                 className="w-full h-auto relative"
               />
@@ -231,7 +230,7 @@ const WriteUp_0 = () => {
             <div>
               <div>
                 <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
-                  <div className="bg-[#E5E5E5] p-5">
+                  <div>
                     <h2 className="text-3xl custom-font text-[#000000] mb-4">
                       Security Fatigue
                     </h2>
@@ -288,8 +287,10 @@ const WriteUp_0 = () => {
               <br />
             </div>
           </div>
+          <br />
+          <br />
         </section>
-        <section className="relative bg-[#E5E5E5] p-5">
+        <section className="relative">
           <div className="grid grid-cols-2 items-center">
             <div>
               <h2 className="text-3xl custom-font text-[#000000] mb-4">
@@ -313,7 +314,7 @@ const WriteUp_0 = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="06.png"
+                src="meme6.png"
                 alt="uvs"
                 className="w-full max-w-[400px] h-auto relative"
               />
@@ -339,18 +340,21 @@ const WriteUp_0 = () => {
               </p>
             </div>
           </div>
+          <br />
+          <br />
         </section>
+
         <section className="py-1 pt-10 relative">
           <br />
           <br />
           <div className="grid grid-cols-2 space-x-8">
-            <div className="flex flex-col bg-[#000000] p-5">
-              <h2 className="text-3xl custom-font text-white mb-4 relative">
+            <div className="flex flex-col">
+              <h2 className="text-3xl custom-font text-black mb-4 relative">
                 Lack of Security Awareness
               </h2>
               <div className="justify-center">
                 <img
-                  src="07.png"
+                  src="meme7.png"
                   alt="secawareness"
                   className="w-full h-auto relative"
                 />
@@ -382,6 +386,7 @@ const WriteUp_0 = () => {
             </div>
           </div>
         </section>
+
         <section>
           <br />
           <div>
@@ -398,6 +403,8 @@ const WriteUp_0 = () => {
               </p>
             </div>
           </div>
+          <br />
+          <br />
         </section>
         {/*1*/}
         <section>

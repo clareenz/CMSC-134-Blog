@@ -97,7 +97,7 @@ const MainPage = () => {
           {/* Image Section */}
           <div className="flex justify-center gap-8">
             {/* Origami Image */}
-            <div className="relative w-[400px] h-[400px]">
+            <div className="relative w-[500px] h-[500px]">
               <img
                 src="four.png"
                 alt="Origami Cybersecurity"
@@ -109,12 +109,12 @@ const MainPage = () => {
               <img
                 src="blacksquare.png"
                 alt="Origami Cybersecurity"
-                className="absolute top- left-70 w-[50%] h-full object-cover drop-shadow-md opacity-10"
+                className="absolute top- left-80 w-[50%] h-full object-cover drop-shadow-md opacity-10"
               />
               <img
                 src="blacksquare.png"
                 alt="Origami Cybersecurity"
-                className="absolute top-40 left-30 w-[50%] h-full object-cover rotate-90 drop-shadow-md opacity-100"
+                className="absolute top-40 left-20 w-[50%] h-full object-cover rotate-90 drop-shadow-md opacity-100"
               />
             </div>
           </div>
