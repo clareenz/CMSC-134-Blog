@@ -53,7 +53,7 @@ const MainPage = () => {
       <div className="fixed top-0 left-0 bg-transparent py-10 px-5">
         <ul>
           {[
-            { id: "home", label: "Home" },
+            { id: "home", label: "The Phishermen" },
             { id: "writeup0", label: "Writeup 0" },
             { id: "authors", label: "Authors" },
           ].map(({ id, label }) => (
@@ -83,11 +83,13 @@ const MainPage = () => {
         <div className="grid grid-cols-2 items-center">
           <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
             <h2 className="text-3xl font-mono text-[#000000] mb-4">
-              404 Error:
+              Goodbye World! Oh wait— Hello World!
             </h2>
-            <p>“Quote not found. But hey, welcome to our blog!”</p>
             <p>
-              Grab a seat, relax, and enjoy the ride through our world of words!
+              This page contains submissions for CMSC 134—all the write-ups
+              assigned to us by our teacher about cybersecurity. The content
+              might even include memes on the topic. Who knows where this will
+              end up? But one thing’s for sure: the Earth is round.
             </p>
             <br />
             <br />
@@ -114,7 +116,7 @@ const MainPage = () => {
               <img
                 src="blacksquare.png"
                 alt="Origami Cybersecurity"
-                className="absolute top-40 left-20 w-[50%] h-full object-cover rotate-90 drop-shadow-md opacity-100"
+                className="absolute top-65 left-35 w-[50%] h-[70%] object-cover rotate-90 drop-shadow-md opacity-100"
               />
             </div>
           </div>
@@ -153,7 +155,7 @@ const MainPage = () => {
           <div>
             <div>
               <h2 className="text-3xl font-semibold text-[#000000] mb-4">
-                I Know There Are a Lot of Problems in My Area, I Have a Mirror
+                Error 404: Human Security Not Found
               </h2>
               <div className="text-gray-700 text-md font-light leading-relaxed text-justify">
                 <p>
