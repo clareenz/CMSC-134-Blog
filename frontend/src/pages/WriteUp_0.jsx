@@ -3,6 +3,7 @@ import React,{ useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import for navigation
 import "./styles.css";
 import Footer from "../components/Footer";
+import { IoMdArrowUp } from "react-icons/io";
 
 const WriteUp_0 = () => {
   const navigate = useNavigate(); // Hook for navigation
@@ -508,9 +509,9 @@ const WriteUp_0 = () => {
          {showScroll && (
           <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 px-6 py-3 custom-button"
+          className="fixed bottom-4 right-4 px-10 py-3 custom-button"
         >
-          Up
+          <IoMdArrowUp />
         </button>
         )}
       </div>
