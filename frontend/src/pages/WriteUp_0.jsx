@@ -1,5 +1,5 @@
 //import GoogleDocEmbed from "../components/GoogleDocEmbed.jsx";
-import React,{ useEffect } from "react";
+import React,{ useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import for navigation
 import "./styles.css";
 import Footer from "../components/Footer";
@@ -10,6 +10,23 @@ const WriteUp_0 = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top on component mount
   }, []);
+
+  const [showScroll, setShowScroll] = useState(false);
+
+  // Detect Scroll Position
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 300); // Show button after scrolling 300px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
 
   return (
@@ -486,6 +503,16 @@ const WriteUp_0 = () => {
         >
           Back
         </button>
+
+         {/* Back Button */}
+         {showScroll && (
+          <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 px-6 py-3 custom-button"
+        >
+          Up
+        </button>
+        )}
       </div>
       <Footer />
     </div>
