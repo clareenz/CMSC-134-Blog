@@ -1,11 +1,16 @@
 //import GoogleDocEmbed from "../components/GoogleDocEmbed.jsx";
-import React from "react";
+import React,{ useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import for navigation
 import "./styles.css";
 import Footer from "../components/Footer";
 
 const WriteUp_0 = () => {
   const navigate = useNavigate(); // Hook for navigation
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top on component mount
+  }, []);
+
 
   return (
     <div className="bg-white">
