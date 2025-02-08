@@ -63,8 +63,9 @@ const WriteUp_0 = () => {
                 factors. While security measures aim to protect systems, they
                 can be ineffective if users and even developers unintentionally
                 introduce vulnerabilities. So let’s dive right into the human
-                factors in computer security – like weak passwords to kasabogan
-                ug katapol to falling victim to social engineering attacks.
+                factors in computer security – like weak passwords to{" "}
+                <span className="italic">kasabogan ug katapol</span> to falling
+                victim to social engineering attacks.
               </p>
             </div>
           </div>
@@ -168,7 +169,7 @@ const WriteUp_0 = () => {
             <div>
               <div>
                 <div className="text-gray-700 text-xl font-light leading-relaxed text-justify pt-16">
-                  <p>
+                  <p className="italic">
                     Another common security risk that baits humans with their
                     naivety is phishing. “What is phishing? Is it similar to
                     fishing?”, you might ask. Yes. In a way.
@@ -179,10 +180,13 @@ const WriteUp_0 = () => {
                     trick people into revealing sensitive information, such as
                     passwords, credit card numbers, or personal data. This is
                     usually done by impersonating a trusted identity, like a
-                    bank, a social media platform, or government agency. All of
-                    this sounds familiar. Was Nikka the fish, and the Steam gift
-                    the bait that reeled in her personal information and caught
-                    her account? Yes.
+                    bank, a social media platform, or government agency.
+                  </p>
+                  <br />
+                  <p className="italic">
+                    All of this sounds familiar. Was Nikka the fish, and the
+                    Steam gift the bait that reeled in her personal information
+                    and caught her account? Yes.
                   </p>
                 </div>
               </div>
@@ -191,7 +195,7 @@ const WriteUp_0 = () => {
         </section>
 
         {/*-2*/}
-        <section className="relative">
+        <section className="relative pt-10">
           {/* Background Image */}
 
           {/* Grid Content */}
@@ -271,7 +275,7 @@ const WriteUp_0 = () => {
           <div>
             <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
               <p>
-                People are just like Nemo from Finding Nemo. Marlin, being
+                People are just like Nemo from <span className="italic">Finding Nemo</span>. Marlin, being
                 overly protective of his son, causes Nemo to eventually rebel
                 and swim into danger. People might not be driven by curiosity,
                 rather by fatigue. When users feel overloaded with security
@@ -369,12 +373,13 @@ const WriteUp_0 = () => {
               <div>
                 <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
                   <p>
-                    In terms of security, ignorance certainly isn't bliss; quite
-                    the opposite, actually. People may have chosen not to learn
-                    about it (big mistake, if you ask me) or were never equipped
-                    with the resources to learn more about it but regardless,
-                    having no knowledge regarding security will lead to massive
-                    losses.
+                    In terms of security, ignorance{" "}
+                    <span className="font-bold">certainly</span> isn't bliss;
+                    quite the opposite, actually. People may have chosen not to
+                    learn about it (big mistake, if you ask me) or were never
+                    equipped with the resources to learn more about it but
+                    regardless, having no knowledge regarding security will lead
+                    to massive losses.
                   </p>
                   <br />
                   <p>
@@ -403,7 +408,7 @@ const WriteUp_0 = () => {
                 Clicking sketchy links, reusing weak passwords, or ignoring
                 two-factor authentication are all risky moves that
                 cybercriminals love to take advantage of. And the worst part? A
-                lot of people don’t even realize they’re making these mistakes
+                lot of people don’t even <span className="italic">realize</span> they’re making these mistakes
                 until it’s too late.
               </p>
             </div>
@@ -442,6 +447,27 @@ const WriteUp_0 = () => {
           </div>
           <br />
           <br />
+          <br />
+          <br />
+        </section>
+        {/*1*/}
+        <section>
+          <div>
+            <h2 className="text-3xl custom-font text-[#000000] mb-4">
+              Parting Words
+            </h2>
+            <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
+              <p>
+                In the end, the core of cyber security lies not just in
+                technology, but human involvement. No matter how advanced
+                encryption methods, firewalls, or security protocols become,
+                they are only as effective as the people using them. Security is
+                a shared responsibility. Technology may safeguard us, but
+                awareness, caution, and proactive behavior are what truly keep
+                us safe.
+              </p>
+            </div>
+          </div>
           <br />
           <br />
           <br />
