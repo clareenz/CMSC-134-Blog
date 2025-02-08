@@ -505,13 +505,13 @@ const WriteUp_0 = () => {
           Back
         </button>
 
-         {/* Back Button */}
+         {/* up Button */}
          {showScroll && (
           <button
           onClick={scrollToTop}
           className="fixed bottom-4 right-4 px-10 py-3 custom-button"
         >
-          <IoMdArrowUp />
+          <IoMdArrowUp size={24}/>
         </button>
         )}
       </div>
