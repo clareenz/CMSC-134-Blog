@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./styles.css";
 import Footer from "../components/Footer";
+import "./styles.css";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -47,14 +47,59 @@ const MainPage = () => {
     return () => observer.disconnect();
   }, []);
 
+  const writeups = [
+    {
+      title: "Error 404: Human Security Not Found",
+      content: `No matter how advanced security gets, humans always find a way
+                  to speedrun getting hacked. From using "iloveyou" as a
+                  password to signing into a fake Steam giveaway faster than you
+                  can say "free gift ni?", we're often the biggest threat to our
+                  own security. This write-up dives into the human side of
+                  cybersecurity fails—whether it's falling for phishing scams
+                  ("Akala ko need for security"—famous last words), ignoring
+                  two-factor authentication ("Samok kaayo"), or reusing the same
+                  password everywhere ("Kinsa gud mag-hack nako?"). It also
+                  looks at the eternal struggle between usability and
+                  security—because when security gets too strict, people start
+                  writing passwords on sticky notes or rage-quitting sign-ins
+                  altogether. At the end of the day, cybersecurity isn’t just
+                  about strong encryption—it’s about making sure we don’t
+                  accidentally hand over our accounts like free samples at the
+                  mall.`,
+      image: "five.png",
+      link: "/writeup0",
+    },
+    {
+      title: "The Phishing Epidemic",
+      content: `Phishing scams are getting more advanced. Attackers aren't just sending 
+                sketchy emails anymore; they're impersonating CEOs, making fake bank websites,
+                and even using AI to generate realistic voices...`,
+      image: "five.png",
+      link: "/writeup1",
+    },
+    // Add more writeups here
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextWriteup = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % writeups.length);
+  };
+
+  const prevWriteup = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? writeups.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div>
       {/* Top Left Corner Menu */}
-      <div className="fixed top-0 left-0 bg-transparent py-10 px-5">
+      <div className="fixed top-0 left-0 bg-transparent py-10 px-5 z-20">
         <ul>
           {[
             { id: "home", label: "The Phishermen" },
-            { id: "writeup0", label: "Writeup 0" },
+            { id: "writeups", label: "Writeups" },
             { id: "authors", label: "Authors" },
           ].map(({ id, label }) => (
             <li key={id} className="py-1">
@@ -124,16 +169,15 @@ const MainPage = () => {
       </section>
 
       <section
-        id="writeup0"
-        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8]  p-50 pt-30 pb-30"
+        id="writeups"
+        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8] p-50 pt-30"
       >
         <div className="grid grid-cols-2 items-center">
           <div className="flex justify-center gap-8">
-            {/* Origami Image */}
             <div className="relative w-[400px] h-[400px]">
               <img
-                src="five.png"
-                alt="Origami Cybersecurity"
+                src={writeups[currentIndex].image}
+                alt="Writeup Image"
                 className="absolute top-0 left-0 w-full h-full object-cover drop-shadow-md z-10"
                 style={{
                   filter: "invert(50%)",
@@ -141,52 +185,40 @@ const MainPage = () => {
               />
               <img
                 src="blacksquare.png"
-                alt="Origami Cybersecurity"
                 className="absolute top-25 left-[-10%] w-[40%] h-[50%] object-cover drop-shadow-md opacity-100"
               />
-
               <img
                 src="blacksquare.png"
-                alt="Origami Cybersecurity"
                 className="absolute top-40 left-10 w-[50%] h-full object-cover rotate-90 drop-shadow-md opacity-10"
               />
             </div>
           </div>
+
           <div>
-            <div>
-              <h2 className="text-3xl font-semibold text-[#000000] mb-4">
-                Error 404: Human Security Not Found
-              </h2>
-              <div className="text-gray-700 text-md font-light leading-relaxed text-justify">
-                <p>
-                  No matter how advanced security gets, humans always find a way
-                  to speedrun getting hacked. From using "iloveyou" as a
-                  password to signing into a fake Steam giveaway faster than you
-                  can say "free gift ni?", we're often the biggest threat to our
-                  own security. This write-up dives into the human side of
-                  cybersecurity fails—whether it's falling for phishing scams
-                  ("Akala ko need for security"—famous last words), ignoring
-                  two-factor authentication ("Samok kaayo"), or reusing the same
-                  password everywhere ("Kinsa gud mag-hack nako?"). It also
-                  looks at the eternal struggle between usability and
-                  security—because when security gets too strict, people start
-                  writing passwords on sticky notes or rage-quitting sign-ins
-                  altogether. At the end of the day, cybersecurity isn’t just
-                  about strong encryption—it’s about making sure we don’t
-                  accidentally hand over our accounts like free samples at the
-                  mall.
-                </p>
-              </div>
-              <br />
-            </div>
+            <h2 className="text-3xl font-semibold text-[#000000] mb-4">
+              {writeups[currentIndex].title}
+            </h2>
+            <p className="text-gray-700 text-md font-light leading-relaxed text-justify">
+              {writeups[currentIndex].content}
+            </p>
+            <br />
             <button
               className="custom-button"
-              onClick={() => navigate("/writeup0")}
+              onClick={() => navigate(writeups[currentIndex].link)}
             >
-              <span></span>
               Read more
             </button>
           </div>
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="flex justify-between mt-[100px]">
+          <button onClick={prevWriteup} className="custom-button">
+            ⬅ Prev
+          </button>
+          <button onClick={nextWriteup} className="custom-button">
+            Next ➡
+          </button>
         </div>
       </section>
 

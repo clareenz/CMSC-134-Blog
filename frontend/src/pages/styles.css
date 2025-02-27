@@ -45,3 +45,17 @@
     font-family: 'Wangloe Inked', sans-serif;
   }
     
+.swiper-button-next,
+.swiper-button-prev {
+  color: black; /* Change button color */
+}
+
+.swiper-pagination-bullet {
+  background: gray; /* Change pagination bullet color */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
