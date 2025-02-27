@@ -5,7 +5,8 @@ import "./styles.css";
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState("mission");
+  const [activeSection, setActiveSection] = useState("home");
+  const [hoveredSection, setHoveredSection] = useState(null);
 
   const teamMembers = [
     {
@@ -70,11 +71,12 @@ const MainPage = () => {
       link: "/writeup0",
     },
     {
-      title: "The Phishing Epidemic",
-      content: `Phishing scams are getting more advanced. Attackers aren't just sending 
-                sketchy emails anymore; they're impersonating CEOs, making fake bank websites,
-                and even using AI to generate realistic voices...`,
-      image: "five.png",
+      title: "Buffer overflow to exit",
+      content: `The purpose of this machine problem is to exploit a stack-based
+      buffer overflow in a vulnerable program to force it to exit cleanly using
+      shellcode. This is achieved by overwriting the return address and redirecting
+      execution to our custom shellcode injected into memory.`,
+      image: "seven.png",
       link: "/writeup1",
     },
     // Add more writeups here
@@ -99,23 +101,78 @@ const MainPage = () => {
         <ul>
           {[
             { id: "home", label: "The Phishermen" },
-            { id: "writeups", label: "Writeups" },
+            {
+              id: "writeups",
+              label: "Writeups",
+              subMenu: [
+                { id: "writeup0", label: "Writeup 0", index: 0 },
+                { id: "writeup1", label: "Writeup 1", index: 1 },
+              ],
+            },
             { id: "authors", label: "Authors" },
-          ].map(({ id, label }) => (
-            <li key={id} className="py-1">
+          ].map(({ id, label, subMenu }) => (
+            <li
+              key={id}
+              className="py-1 transition-all"
+              onMouseEnter={() => setHoveredSection(id)}
+              onMouseLeave={() => setHoveredSection(null)}
+            >
               <a href={`#${id}`} onClick={() => setActiveSection(id)}>
                 <div className="w-40 flex items-center">
                   <span
-                    className={`w-full text-left text-black transition-all py-2  pl-2 rounded-r-xl ${
+                    className={`w-full text-left transition-all py-2 pl-2 rounded-r-xl ${
                       activeSection === id
-                        ? "bg-black text-white rounded-r-xl"
-                        : "hover:bg-black hover:text-white hover:rounded-r-xl"
+                        ? "bg-black text-white" // Active section stays black
+                        : hoveredSection === id
+                        ? "bg-black text-white" // Hover effect
+                        : "bg-transparent text-black" // Default state
                     }`}
                   >
                     {label}
                   </span>
                 </div>
               </a>
+
+              {/* Submenu */}
+              {subMenu &&
+                hoveredSection &&
+                activeSection.startsWith("writeups") && (
+                  <ul className="pl-4">
+                    {subMenu.map(({ id, label, index }) => (
+                      <li key={id} className="py-1">
+                        <a
+                          href={`#${id}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setActiveSection(`writeups-${id}`); // Keep main menu active while tracking submenu
+                            setCurrentIndex(index);
+
+                            // Smooth scroll to section
+                            const section = document.getElementById(id);
+                            if (section) {
+                              section.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              });
+                            }
+                          }}
+                        >
+                          <div className="w-40 flex items-center">
+                            <span
+                              className={`w-full text-left transition-all py-2 pl-2 rounded-r-xl ${
+                                activeSection === `writeups-${id}`
+                                  ? "bg-black text-white" // Active submenu
+                                  : "hover:bg-black hover:text-white bg-transparent text-black" // Default & Hover
+                              }`}
+                            >
+                              {label}
+                            </span>
+                          </div>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
             </li>
           ))}
         </ul>
