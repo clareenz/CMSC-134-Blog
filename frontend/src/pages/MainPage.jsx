@@ -7,7 +7,7 @@ const MainPage = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("home");
   const [hoveredSection, setHoveredSection] = useState(null);
-
+  const [activeSubSection, setActiveSubSection] = useState(null);
   const teamMembers = [
     {
       name: "Zayne Peladas",
@@ -87,7 +87,11 @@ const MainPage = () => {
   const nextWriteup = () => {
     setCurrentIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % writeups.length;
-      setActiveSection(`writeups-writeup${newIndex}`); // Update active section
+      
+      // Highlight both the main menu and submenu items
+      setActiveSection("writeups"); 
+      setActiveSubSection(`writeups-writeup${newIndex}`);
+      
       return newIndex;
     });
   };
@@ -95,7 +99,11 @@ const MainPage = () => {
   const prevWriteup = () => {
     setCurrentIndex((prevIndex) => {
       const newIndex = prevIndex === 0 ? writeups.length - 1 : prevIndex - 1;
-      setActiveSection(`writeups-writeup${newIndex}`); // Update active section
+      
+      // Highlight both the main menu and submenu items
+      setActiveSection("writeups"); 
+      setActiveSubSection(`writeups-writeup${newIndex}`);
+      
       return newIndex;
     });
   };
@@ -150,7 +158,7 @@ const MainPage = () => {
                           href={`#${id}`}
                           onClick={(e) => {
                             e.preventDefault();
-                            setActiveSection(`writeups-${id}`); // Keep main menu active while tracking submenu
+                            setActiveSubSection(`writeups-${id}`); // Keep main menu active while tracking submenu
                             setCurrentIndex(index);
 
                             // Smooth scroll to section
@@ -166,7 +174,7 @@ const MainPage = () => {
                           <div className="w-40 flex items-center">
                             <span
                               className={`w-full text-left transition-all py-2 pl-2 rounded-r-xl ${
-                                activeSection === `writeups-${id}`
+                                activeSubSection === `writeups-${id}`
                                   ? "bg-black text-white" // Active submenu
                                   : "hover:bg-black hover:text-white bg-transparent text-black" // Default & Hover
                               }`}
