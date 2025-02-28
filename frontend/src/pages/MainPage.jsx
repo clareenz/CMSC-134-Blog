@@ -85,13 +85,19 @@ const MainPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextWriteup = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % writeups.length);
+    setCurrentIndex((prevIndex) => {
+      const newIndex = (prevIndex + 1) % writeups.length;
+      setActiveSection(`writeups-writeup${newIndex}`); // Update active section
+      return newIndex;
+    });
   };
-
+  
   const prevWriteup = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? writeups.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex === 0 ? writeups.length - 1 : prevIndex - 1;
+      setActiveSection(`writeups-writeup${newIndex}`); // Update active section
+      return newIndex;
+    });
   };
 
   return (
