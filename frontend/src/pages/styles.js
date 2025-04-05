@@ -1,4 +1,4 @@
-const styles = {
+export const styles = {
     /* Top Menu */
     menuContainer: "fixed top-0 left-0 bg-transparent py-10 px-5 z-20",
     menuItem: "transition-all",
@@ -54,5 +54,3 @@ const styles = {
     teamMemberBackName: "text-xl font-semibold text-black",
     teamMemberBackMotto: "text-gray-700 italic mt-2",
 };
-
-export default styles;
