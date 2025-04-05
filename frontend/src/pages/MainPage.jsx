@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import styles from "./styles"; //js styles
 import "./styles.css";
 
 const MainPage = () => {
@@ -8,6 +9,7 @@ const MainPage = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [hoveredSection, setHoveredSection] = useState(null);
   const [activeSubSection, setActiveSubSection] = useState(null);
+
   const teamMembers = [
     {
       name: "Zayne Peladas",
@@ -44,7 +46,6 @@ const MainPage = () => {
     );
 
     sections.forEach((section) => observer.observe(section));
-
     return () => observer.disconnect();
   }, []);
 
@@ -52,21 +53,21 @@ const MainPage = () => {
     {
       title: "Error 404: Human Security Not Found",
       content: `No matter how advanced security gets, humans always find a way
-                  to speedrun getting hacked. From using "iloveyou" as a
-                  password to signing into a fake Steam giveaway faster than you
-                  can say "free gift ni?", we're often the biggest threat to our
-                  own security. This write-up dives into the human side of
-                  cybersecurity fails—whether it's falling for phishing scams
-                  ("Akala ko need for security"—famous last words), ignoring
-                  two-factor authentication ("Samok kaayo"), or reusing the same
-                  password everywhere ("Kinsa gud mag-hack nako?"). It also
-                  looks at the eternal struggle between usability and
-                  security—because when security gets too strict, people start
-                  writing passwords on sticky notes or rage-quitting sign-ins
-                  altogether. At the end of the day, cybersecurity isn’t just
-                  about strong encryption—it’s about making sure we don’t
-                  accidentally hand over our accounts like free samples at the
-                  mall.`,
+                to speedrun getting hacked. From using "iloveyou" as a
+                password to signing into a fake Steam giveaway faster than you
+                can say "free gift ni?", we're often the biggest threat to our
+                own security. This write-up dives into the human side of
+                cybersecurity fails—whether it's falling for phishing scams
+                ("Akala ko need for security"—famous last words), ignoring
+                two-factor authentication ("Samok kaayo"), or reusing the same
+                password everywhere ("Kinsa gud mag-hack nako?"). It also
+                looks at the eternal struggle between usability and
+                security—because when security gets too strict, people start
+                writing passwords on sticky notes or rage-quitting sign-ins
+                altogether. At the end of the day, cybersecurity isn’t just
+                about strong encryption—it’s about making sure we don’t
+                accidentally hand over our accounts like free samples at the
+                mall.`,
       image: "five.png",
       link: "/writeup0",
     },
@@ -79,7 +80,12 @@ const MainPage = () => {
       image: "seven.png",
       link: "/writeup1",
     },
-    // Add more writeups here
+    {
+      title: "RSA & Code Walkthrough",
+      content: `RSA is based on the mathematical difficulty of factoring large prime numbers, making it incredibly secure. This write-up explores how RSA encryption and digital signatures work—from generating key pairs and saving/loading keys to encrypting, decrypting, signing, and verifying messages. It also demonstrates the effects of random padding in producing different outputs for the same message, ensuring confidentiality, integrity, and authentication in cybersecurity.`,
+      image: "three.png",
+      link: "/writeup2",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -87,31 +93,25 @@ const MainPage = () => {
   const nextWriteup = () => {
     setCurrentIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % writeups.length;
-      
-      // Highlight both the main menu and submenu items
-      setActiveSection("writeups"); 
+      setActiveSection("writeups");
       setActiveSubSection(`writeups-writeup${newIndex}`);
-      
       return newIndex;
     });
   };
-  
+
   const prevWriteup = () => {
     setCurrentIndex((prevIndex) => {
       const newIndex = prevIndex === 0 ? writeups.length - 1 : prevIndex - 1;
-      
-      // Highlight both the main menu and submenu items
-      setActiveSection("writeups"); 
+      setActiveSection("writeups");
       setActiveSubSection(`writeups-writeup${newIndex}`);
-      
       return newIndex;
     });
   };
 
   return (
-    <div>
+    <div className="w-screen">
       {/* Top Left Corner Menu */}
-      <div className="fixed top-0 left-0 bg-transparent py-10 px-5 z-20">
+      <div className={styles.menuContainer}>
         <ul>
           {[
             { id: "home", label: "The Phishermen" },
@@ -121,169 +121,170 @@ const MainPage = () => {
               subMenu: [
                 { id: "writeup0", label: "Writeup 0", index: 0 },
                 { id: "writeup1", label: "Writeup 1", index: 1 },
+                { id: "writeup2", label: "Writeup 2", index: 2 },
               ],
             },
             { id: "authors", label: "Authors" },
           ].map(({ id, label, subMenu }) => (
             <li
               key={id}
-              className="py-1 transition-all"
+              className={styles.menuItem}
               onMouseEnter={() => setHoveredSection(id)}
               onMouseLeave={() => setHoveredSection(null)}
             >
-              <a href={`#${id}`} onClick={() => setActiveSection(id)}>
-                <div className="w-40 flex items-center">
-                  <span
-                    className={`w-full text-left transition-all py-2 pl-2 rounded-r-xl ${
-                      activeSection === id
-                        ? "bg-black text-white" // Active section stays black
-                        : hoveredSection === id
-                        ? "bg-black text-white" // Hover effect
-                        : "bg-transparent text-black" // Default state
-                    }`}
-                  >
-                    {label}
-                  </span>
-                </div>
+              <a
+                href={`#${id}`}
+                onClick={() => setActiveSection(id)}
+                className={styles.menuLink}
+              >
+                <span
+                  className={`${styles.menuLinkSpan} ${
+                    activeSection === id || hoveredSection === id
+                      ? styles.activeLink
+                      : styles.defaultLink
+                  }`}
+                >
+                  {label}
+                </span>
               </a>
 
-              {/* Submenu */}
-              {subMenu &&
-                hoveredSection &&
-                activeSection.startsWith("writeups") && (
-                  <ul className="pl-4">
-                    {subMenu.map(({ id, label, index }) => (
-                      <li key={id} className="py-1">
-                        <a
-                          href={`#${id}`}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setActiveSubSection(`writeups-${id}`); // Keep main menu active while tracking submenu
-                            setCurrentIndex(index);
-
-                            // Smooth scroll to section
-                            const section = document.getElementById(id);
-                            if (section) {
-                              section.scrollIntoView({
-                                behavior: "smooth",
-                                block: "start",
-                              });
-                            }
-                          }}
+              {subMenu && (
+                <ul
+                  className={`${styles.subMenu} ${
+                    hoveredSection === id ? "max-h-60" : "max-h-0"
+                  }`}
+                >
+                  {subMenu.map(({ id: subId, label: subLabel, index }) => (
+                    <li key={subId} className={styles.subMenuItem}>
+                      <a
+                        href="#writeups"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          // Set the main section to "writeups"
+                          setActiveSection("writeups");
+                          // Set the active submenu and update the current index
+                          setActiveSubSection(`writeups-${subId}`);
+                          setCurrentIndex(index);
+                          // Scroll to the Writeups section
+                          const section = document.getElementById("writeups");
+                          if (section) {
+                            section.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start",
+                            });
+                          }
+                        }}
+                        className={styles.subMenuLink}
+                      >
+                        <span
+                          className={`${styles.subMenuLinkSpan} ${
+                            activeSubSection === `writeups-${subId}`
+                              ? styles.activeSubLink
+                              : styles.defaultSubLink
+                          }`}
                         >
-                          <div className="w-40 flex items-center">
-                            <span
-                              className={`w-full text-left transition-all py-2 pl-2 rounded-r-xl ${
-                                activeSubSection === `writeups-${id}`
-                                  ? "bg-black text-white" // Active submenu
-                                  : "hover:bg-black hover:text-white bg-transparent text-black" // Default & Hover
-                              }`}
-                            >
-                              {label}
-                            </span>
-                          </div>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                          {subLabel}
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
       </div>
 
-      <section
-        id="home"
-        className="py-12 bg-gradient-to-b from-[#F4F4F4] to-[#E2E2E2]  p-70 pt-30 pb-30"
-      >
-        <div className="grid grid-cols-2 items-center">
-          <div className="text-gray-700 text-xl font-light leading-relaxed text-justify">
-            <h2 className="text-3xl font-mono text-[#000000] mb-4">
-              Goodbye World! Oh wait— Hello World!
-            </h2>
-            <p>
-              This page contains submissions for CMSC 134—all the write-ups
-              assigned to us by our teacher about cybersecurity. The content
-              might even include memes on the topic. Who knows where this will
-              end up? But one thing’s for sure: the Earth is round.
-            </p>
-            <br />
-            <br />
-            <p className="text-sm">CMSC 134: Cybersecurity</p>
-          </div>
+      {/* Home Section */}
+      <section id="home" className={styles.sSection}>
+        <div className={styles.homeBackground}></div>
+        <div className={styles.cContent}>
+          <div className={styles.gGrid0}>
+            <div>
+              <h2 className={styles.homeHeading}>
+                Goodbye World! Oh wait— Hello World!
+              </h2>
+              <p className={styles.homeText}>
+                This page contains submissions for CMSC 134—all the write-ups
+                assigned to us by our teacher about cybersecurity. The content
+                might even include memes on the topic. Who knows where this will
+                end up? But one thing’s for sure: the Earth is round.
+              </p>
+              <br />
+              <p className={styles.homeFooter}>CMSC 134: Cybersecurity</p>
+            </div>
 
-          {/* Image Section */}
-          <div className="flex justify-center gap-8">
-            {/* Origami Image */}
-            <div className="relative w-[500px] h-[500px]">
-              <img
-                src="four.png"
-                alt="Origami Cybersecurity"
-                className="absolute top-0 left-0 w-full h-full object-cover drop-shadow-md z-10"
-                style={{
-                  filter: "invert(50%)",
-                }}
-              />
-              <img
-                src="blacksquare.png"
-                alt="Origami Cybersecurity"
-                className="absolute top- left-80 w-[50%] h-full object-cover drop-shadow-md opacity-10"
-              />
-              <img
-                src="blacksquare.png"
-                alt="Origami Cybersecurity"
-                className="absolute top-65 left-35 w-[50%] h-[70%] object-cover rotate-90 drop-shadow-md opacity-100"
-              />
+            {/* Image Section */}
+            <div className={styles.imageWrapper}>
+              <div className={styles.origamiImageContainer}>
+                <img
+                  src="four.png"
+                  alt="Origami Cybersecurity"
+                  className={styles.origamiImage}
+                  style={{ filter: "invert(50%)" }}
+                />
+                <img
+                  src="blacksquare.png"
+                  alt="Origami Cybersecurity"
+                  className={styles.origamiBgImage1}
+                />
+                <img
+                  src="blacksquare.png"
+                  alt="Origami Cybersecurity"
+                  className={styles.origamiBgImage2}
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        id="writeups"
-        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8] p-50 pt-30"
-      >
-        <div className="grid grid-cols-2 items-center">
-          <div className="flex justify-center gap-8">
-            <div className="relative w-[400px] h-[400px]">
-              <img
-                src={writeups[currentIndex].image}
-                alt="Writeup Image"
-                className="absolute top-0 left-0 w-full h-full object-cover drop-shadow-md z-10"
-                style={{
-                  filter: "invert(50%)",
-                }}
-              />
-              <img
-                src="blacksquare.png"
-                className="absolute top-25 left-[-10%] w-[40%] h-[50%] object-cover drop-shadow-md opacity-100"
-              />
-              <img
-                src="blacksquare.png"
-                className="absolute top-40 left-10 w-[50%] h-full object-cover rotate-90 drop-shadow-md opacity-10"
-              />
+      {/* Writeup Section */}
+      <section id="writeups" className={styles.sSection}>
+        <div className={styles.writeupBackground}></div>
+        <div className={styles.cContent}>
+          <div className={styles.gGrid1}>
+            {/* Image Section */}
+            <div className={styles.imageWrapper}>
+              <div className={styles.writeupImageContainer}>
+                <img
+                  src={writeups[currentIndex].image}
+                  alt="Writeup"
+                  className={styles.writeupImage}
+                  style={{ filter: "invert(50%)" }}
+                />
+                <img
+                  src="blacksquare.png"
+                  className={styles.writeupBgImage1}
+                  alt="Background"
+                />
+                <img
+                  src="blacksquare.png"
+                  className={styles.writeupBgImage2}
+                  alt="Background"
+                />
+              </div>
+            </div>
+            {/* Content Section */}
+            <div>
+              <h2 className={styles.writeupTitle}>
+                {writeups[currentIndex].title}
+              </h2>
+              <p className={styles.writeupContent}>
+                {writeups[currentIndex].content}
+              </p>
+              <br />
+              <button
+                className="custom-button"
+                onClick={() => navigate(writeups[currentIndex].link)}
+              >
+                Read more
+              </button>
             </div>
           </div>
-
-          <div>
-            <h2 className="text-3xl font-semibold text-[#000000] mb-4">
-              {writeups[currentIndex].title}
-            </h2>
-            <p className="text-gray-700 text-md font-light leading-relaxed text-justify">
-              {writeups[currentIndex].content}
-            </p>
-            <br />
-            <button
-              className="custom-button"
-              onClick={() => navigate(writeups[currentIndex].link)}
-            >
-              Read more
-            </button>
-          </div>
         </div>
-
         {/* Navigation Arrows */}
-        <div className="flex justify-between mt-[100px]">
+        <div className={styles.navArrowsContainer}>
           <button onClick={prevWriteup} className="custom-button">
             ⬅ Prev
           </button>
@@ -293,42 +294,31 @@ const MainPage = () => {
         </div>
       </section>
 
-      <section
-        id="authors"
-        className="py-12 bg-gradient-to-b from-[#EAEAEA] to-[#dad8d8] pb-70 pt-30"
-      >
-        <div className="container mx-auto px-6 lg:px-20">
-          <h2 className="text-3xl font-semibold text-[#000000] mb-8 text-center animate__animated animate__fadeInUp">
-            Meet the Authors
-          </h2>
-          <div className="flex flex-wrap justify-center">
+      {/* Authors Section */}
+      <section id="authors" className={styles.authorsSection}>
+        <div className={styles.authorsContainer}>
+          <h2 className={styles.authorsHeading}>Meet the Authors</h2>
+          <div className={styles.authorsGrid}>
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className={`max-w-sm w-full lg:w-1/4 p-4 animate__animated animate__fadeInUp animate__delay-${index}s`}
+                className={`${styles.teamMemberCard} animate__delay-${index}s`}
               >
-                <div className="relative group">
+                <div className={styles.teamMemberCardContainer}>
                   {/* Front Card */}
-                  <div className="bg-gradient-to-t from-gray-200 via-gray-100 to-[#DDDCDC] rounded-xl shadow-lg p-6 text-center  transition-transform duration-300 ease-in-out transform hover:shadow-xl">
+                  <div className={styles.teamMemberFront}>
                     <img
                       src={member.image}
                       alt="Team member"
-                      className="w-32 h-32 rounded-full mx-auto object-cover shadow-md"
+                      className={styles.teamMemberImage}
                     />
-                    <h3 className="text-xl font-mono text-black mt-4">
-                      {member.name}
-                    </h3>
-                    {/* Optional: Member role and skills */}
-                    {/* <p className="text-gray-600 text-sm">{member.role}</p> */}
-                    {/* <p className="text-gray-600 text-sm">{member.skills}</p> */}
+                    <h3 className={styles.teamMemberName}>{member.name}</h3>
                   </div>
 
-                  {/* Back Card (appears on hover) */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-gray-100 to-[#DDDCDC] rounded-xl shadow-lg p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center">
-                    <h3 className="text-xl font-semibold text-black">
-                      {member.name}
-                    </h3>
-                    <p className="text-gray-700 italic mt-2">
+                  {/* Back Card */}
+                  <div className={styles.teamMemberBack}>
+                    <h3 className={styles.teamMemberBackName}>{member.name}</h3>
+                    <p className={styles.teamMemberBackMotto}>
                       "{member.motto}"
                     </p>
                   </div>
