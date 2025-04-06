@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
-import {styles} from "./styles";
+import { styles } from "./styles";
 import "./styles.css";
 
 const MainPage = () => {
@@ -81,8 +81,8 @@ const MainPage = () => {
       link: "/writeup1",
     },
     {
-      title: "RSA & Code Walkthrough",
-      content: `RSA is based on the mathematical difficulty of factoring large prime numbers, making it incredibly secure. This write-up explores how RSA encryption and digital signatures work—from generating key pairs and saving/loading keys to encrypting, decrypting, signing, and verifying messages. It also demonstrates the effects of random padding in producing different outputs for the same message, ensuring confidentiality, integrity, and authentication in cybersecurity.`,
+      title: "From Keygen to Integrity: RSA-OAEP in Action",
+      content: `This write-up explores the implementation of authenticated encryption using RSA-OAEP and RSA-PSS in an encrypt-then-sign scheme. It walks through generating separate keypairs for encryption and signing, encrypting a short message, signing it for authenticity, and finally verifying and decrypting it. By combining confidentiality and integrity, this approach ensures that messages are both secure and tamper-proof — a fundamental practice in modern cryptographic communication.`,
       image: "three.png",
       link: "/writeup2",
     },

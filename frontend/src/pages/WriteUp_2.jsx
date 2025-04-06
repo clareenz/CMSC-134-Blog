@@ -31,15 +31,14 @@ const WriteUp_2 = () => {
     <div className={styles.container}>
       <div className={styles.mainWrapper}>
         <div className={styles.headerContainer}>
-          <h2 className={styles.largeTitle}>Human</h2>
-          <h2 className={styles.largeTitle}>Factors</h2>
+          <h2 className={styles.largeTitle}>From keygen to integrity:</h2>
+          <h2 className={styles.largeTitle}>RSA-OAEP in Action</h2>
           <br />
-          <h3 className={styles.subHeader}>IN COMPUTER SECURITY</h3>
           <h3 className={styles.subHeader}>WRITEUP 2</h3>
           <br />
           <img src="/brain.png" alt="brain" className={styles.heroImage} />
           <br />
-          <h3 className={styles.dateText}>February 8, 2025</h3>
+          <h3 className={styles.dateText}>April 6, 2025</h3>
         </div>
         <br />
         <br />
@@ -63,10 +62,15 @@ const WriteUp_2 = () => {
                 signatures, which verify the authenticity of a message and
                 ensure it has not been tampered with.
               </p>
+              <div className={styles.justifyCenter}>
+                <img
+                  src="RSA.png"
+                  alt="rsa"
+                  className={styles.imageFullRelative}
+                />
+              </div>
             </div>
           </div>
-          <br />
-          <br />
         </section>
         <section className={styles.sectionSpacingSmall}>
           <div className={styles.twoColumnGrid}>
@@ -103,6 +107,7 @@ const WriteUp_2 = () => {
           </div>
         </section>
         <section>
+          <br />
           <pre className={styles.codeBlock}>
             {`def generate_keypair():
     private_key = rsa.generate_private_key(
@@ -111,15 +116,21 @@ const WriteUp_2 = () => {
     )
     return private_key, private_key.public_key()`}
           </pre>
+          <br />
           <p className={styles.sectionText}>
-            The generate_keypair() function creates a private and public key
-            pair using RSA with a key size of 2048 bits. This size is considered
-            secure and widely used in practice. A 2048-bit key provides 112 bits
-            of security—this means an attacker would need approximately 2^(112)
-            operations to break it. This is considered safe against most modern
-            computing power, including advanced supercomputers.
+            The{" "}
+            <span className="text-green-700 font-bold">generate_keypair()</span>{" "}
+            function creates a private and public key pair using RSA with a key
+            size of 2048 bits. This size is considered secure and widely used in
+            practice. A 2048-bit key provides 112 bits of security—this means an
+            attacker would need approximately 2^(112) operations to break it.
+            This is considered safe against most modern computing power,
+            including advanced supercomputers.
           </p>
         </section>
+        <br />
+        <br />
+        <br />
         <section className={styles.sectionSpacingSmall}>
           <div className={styles.twoColumnGrid + " relative z-10"}>
             <div className={styles.flexColumn}>
@@ -149,16 +160,25 @@ const WriteUp_2 = () => {
                 </p>
                 <br />
                 <p>
-                  The save_key() function writes the RSA keys to files in PEM
-                  format. Private keys are saved using private_bytes() and
-                  public keys use public_bytes(). This allows the program to
-                  load the same keys later, which is useful for real-world
-                  applications where consistent encryption and signing are
-                  required.
+                  The{" "}
+                  <span className="text-green-700 font-bold">save_key()</span>{" "}
+                  function writes the RSA keys to files in PEM format. Private
+                  keys are saved using{" "}
+                  <span className="text-green-700 font-bold">
+                    private_bytes()
+                  </span>{" "}
+                  and public keys use{" "}
+                  <span className="text-green-700 font-bold">
+                    public_bytes()
+                  </span>
+                  . This allows the program to load the same keys later, which
+                  is useful for real-world applications where consistent
+                  encryption and signing are required.
                 </p>
               </div>
             </div>
           </div>
+          <br />
           <div className={styles.justifyCenter}>
             <img
               src="how.png"
@@ -167,6 +187,9 @@ const WriteUp_2 = () => {
             />
           </div>
         </section>
+        <br />
+        <br />
+        <br />
         <section className={styles.sectionSpacingSmall}>
           <div className={styles.twoColumnGrid + " relative z-10"}>
             <div className={styles.flexColumn}>
@@ -188,16 +211,20 @@ const WriteUp_2 = () => {
               <div className={styles.sectionTextWithPadding}>
                 <p>
                   When a message is provided, it is encrypted using the public
-                  key and RSA-OAEP padding.
+                  key and <span className="font-bold">RSA-OAEP</span> padding.
                 </p>
                 <br />
                 <p>
-                  The encrypt_message() function converts the plaintext message
-                  into ciphertext. The code uses OAEP padding (Optimal
-                  Asymmetric Encryption Padding) which adds random data to the
-                  message before encryption. This randomness ensures that even
-                  if you encrypt the same message multiple times, the resulting
-                  ciphertext will be different each time.
+                  The{" "}
+                  <span className="font-bold text-green-700">
+                    encrypt_message()
+                  </span>{" "}
+                  function converts the plaintext message into ciphertext. The
+                  code uses OAEP padding (Optimal Asymmetric Encryption Padding)
+                  which adds random data to the message before encryption. This
+                  randomness ensures that even if you encrypt the same message
+                  multiple times, the resulting ciphertext will be different
+                  each time.
                 </p>
               </div>
             </div>
@@ -228,6 +255,9 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
 `}
           </pre>
         </section>
+        <br />
+        <br />
+        <br />
         <section className={styles.sectionSpacingSmall}>
           <div className={styles.twoColumnGrid + " relative z-10"}>
             <div className={styles.flexColumn}>
@@ -253,14 +283,21 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
             <div>
               <div className={styles.sectionTextWithPadding}>
                 <p>
-                  The decrypt_message() function reverses the encryption
-                  process. It decodes the base64-encoded ciphertext, decrypts it
-                  with the private key, and returns the original message.
+                  The{" "}
+                  <span className="font-bold text-green-700">
+                    decrypt_message()
+                  </span>{" "}
+                  function reverses the encryption process. It decodes the
+                  base64-encoded ciphertext, decrypts it with the private key,
+                  and returns the original message.
                 </p>
               </div>
             </div>
           </div>
         </section>
+        <br />
+        <br />
+        <br />
         <section className={styles.sectionSpacingSmall}>
           <div className={styles.twoColumnGrid + " relative z-10"}>
             <div className={styles.flexColumn}>
@@ -285,17 +322,24 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
             <div>
               <div className={styles.sectionTextWithPadding}>
                 <p>
-                  The sign_message() function generates a digital signature
-                  using PSS padding (Probabilistic Signature Scheme). Similar to
-                  encryption, the padding adds randomness, so the signature
-                  differs even for the same message. This signature allows
-                  others to verify that the message was signed by the legitimate
-                  sender.
+                  The{" "}
+                  <span className="text-green-700 font-bold">
+                    sign_message()
+                  </span>{" "}
+                  function generates a digital signature using{" "}
+                  <span className="font-bold">PSS padding</span> (Probabilistic
+                  Signature Scheme). Similar to encryption, the padding adds
+                  randomness, so the signature differs even for the same
+                  message. This signature allows others to verify that the
+                  message was signed by the legitimate sender.
                 </p>
               </div>
             </div>
           </div>
         </section>
+        <br />
+        <br />
+        <br />
         <section className={styles.sectionSpacingSmall}>
           <div className={styles.twoColumnGrid + " relative z-10"}>
             <div className={styles.flexColumn}>
@@ -321,9 +365,12 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
               <div className={styles.sectionTextWithPadding}>
                 <p>
                   The receiver verifies the signature using the public key. The
-                  verify_signature() function checks that the digital signature
-                  matches the message. If the message or signature is tampered
-                  with, the verification will fail.
+                  <span className="font-bold text-green-700">
+                    verify_signature()
+                  </span>{" "}
+                  function checks that the digital signature matches the
+                  message. If the message or signature is tampered with, the
+                  verification will fail.
                 </p>
               </div>
             </div>
@@ -343,17 +390,20 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
         </section>
         <br />
         <br />
+        <br />
         <section>
           <div>
             <h2 className={styles.sectionTitle}>
-              PWhat if we attempt to simulate tampering?
+              What if we attempt to simulate tampering?
             </h2>
             <div className={styles.sectionText}>
               <p>
                 We modified the code so that it loads the previously saved
                 encrypted message and signature from
-                ciphertext_and_signature.txt instead of generating a new pair
-                each time.
+                <span className="font-bold text-green-700">
+                  ciphertext_and_signature.txt
+                </span>{" "}
+                instead of generating a new pair each time.
               </p>
             </div>
           </div>
@@ -413,6 +463,7 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
             ciphertext_and_signature.txt file is altered, the decryption process
             fails, and the decrypted message is not printed, as shown below.
           </p>
+          <br />
           <div className={styles.justifyCenter}>
             <img
               src="tamper.png"
@@ -420,6 +471,7 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
               className={styles.imageFullRelative}
             />
           </div>
+          <br />
           <p className={styles.sectionText}>
             Note: The code failed when we tried to erase the random text as
             “tampering”, it decrypted the message when the encrypted word was
@@ -427,6 +479,9 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
             right?
           </p>
         </section>
+        <br />
+        <br />
+        <br />
         <section>
           <div>
             <h2 className={styles.sectionTitle}>
@@ -436,20 +491,22 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
               <p>
                 You might wonder why encrypting or signing the same message
                 multiple times results in different outputs. This happens
-                because of the random padding used in both the encryption
-                (RSA-OAEP) and signature (RSA-PSS) processes. This randomness
-                prevents attackers from recognizing repeated messages or
-                signatures, adding an extra layer of security. Without padding,
-                the same input would always produce the same output, which could
-                reveal patterns and make the encryption vulnerable to attacks.
-                By introducing randomness, RSA encryption and signatures remain
-                unpredictable and secure, even if the same message is processed
-                repeatedly.
+                because of the <span className="font-bold">random padding</span>{" "}
+                used in both the encryption (RSA-OAEP) and signature (RSA-PSS)
+                processes. This randomness prevents attackers from recognizing
+                repeated messages or signatures, adding an extra layer of
+                security. Without padding, the same input would always produce
+                the same output, which could reveal patterns and make the
+                encryption vulnerable to attacks. By introducing randomness, RSA
+                encryption and signatures remain unpredictable and secure, even
+                if the same message is processed repeatedly.
               </p>
             </div>
           </div>
         </section>
-
+        <br />
+        <br />
+        <br />
         <section>
           <div>
             <h2 className={styles.sectionTitle}>
@@ -458,24 +515,30 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
             <div className={styles.sectionText}>
               <p>
                 This program demonstrates core concepts of cybersecurity:
-                confidentiality, integrity, and authentication.
+                <span className="font-bold">
+                  confidentiality, integrity,
+                </span>{" "}
+                and <span className="font-bold">authentication</span>.
               </p>
               <br />
               <ol className={styles.list}>
                 <li>
-                  Confidentiality: Encryption ensures that only the intended
-                  recipient can read the message. Even if someone intercepts the
-                  ciphertext, they cannot decrypt it without the private key.
+                  <span className="font-bold">Confidentiality</span>: Encryption
+                  ensures that only the intended recipient can read the message.
+                  Even if someone intercepts the ciphertext, they cannot decrypt
+                  it without the private key.
                 </li>
                 <li>
-                  Integrity: Digital signatures confirm that the message has not
-                  been altered. If someone modifies the message, signature
-                  verification will fail.
+                  <span className="font-bold">Integrity</span>: Digital
+                  signatures confirm that the message has not been altered. If
+                  someone modifies the message, signature verification will
+                  fail.
                 </li>
                 <li>
-                  Authentication: The signature also verifies the sender’s
-                  identity. Only someone with the signing private key could have
-                  generated the signature.
+                  <span className="font-bold">Authentication</span>: The
+                  signature also verifies the sender’s identity. Only someone
+                  with the signing private key could have generated the
+                  signature.
                 </li>
               </ol>
               <br />
@@ -492,6 +555,14 @@ W66j09SUaKjR64ypZFgWUzxuVPO4RrHg==
         </section>
         <br />
         <br />
+        <a
+          href="https://github.com/nikkamendoza/MP134.git"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-3 rounded-2xl shadow-md bg-black text-white font-semibold hover:bg-gray-800 transition duration-200"
+        >
+          🔗 View Source on GitHub
+        </a>
         <br />
         <br />
         <br />
