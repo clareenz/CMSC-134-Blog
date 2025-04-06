@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { styles } from "./writeUp0Styles";
+import { styles } from "./WriteUp0Styles.js";
 import "./styles.css";
 import Footer from "../components/Footer";
 import { IoMdArrowUp } from "react-icons/io";
