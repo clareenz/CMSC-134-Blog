@@ -86,6 +86,13 @@ const MainPage = () => {
       image: "three.png",
       link: "/writeup2",
     },
+    {
+      title:
+        "“You Thought It Was Just Login and Posting? Well, So Did The Hackers.”",
+      content: `This write-up explores the process of securing a vulnerable Flask-based web application by identifying and patching three major security flaws: SQL Injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF). It walks through how an attacker could manipulate login forms, inject malicious scripts into user posts, and submit unauthorized requests on behalf of a logged-in user. By carefully applying parameterized queries, HTML escaping, and CSRF token enforcement using Flask-WTF, this write-up demonstrates how to harden a basic web app into something much less friendly to attackers — and much more trustworthy for real users.`,
+      image: "MASK.png",
+      link: "/writeup3",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -122,6 +129,7 @@ const MainPage = () => {
                 { id: "writeup0", label: "Writeup 0", index: 0 },
                 { id: "writeup1", label: "Writeup 1", index: 1 },
                 { id: "writeup2", label: "Writeup 2", index: 2 },
+                { id: "writeup3", label: "Writeup 3", index: 3 },
               ],
             },
             { id: "authors", label: "Authors" },
